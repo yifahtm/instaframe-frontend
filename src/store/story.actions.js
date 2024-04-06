@@ -1,4 +1,4 @@
-import { storieservice } from '../services/story.service.local.js'
+import { storyService } from '../services/story.service.local.js'
 import { userService } from '../services/user.service.js'
 import { store } from './store.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
@@ -27,7 +27,7 @@ export function getActionUpdateStory(story) {
 
 export async function loadStories() {
     try {
-        const stories = await storieservice.query()
+        const stories = await storyService.query()
         console.log('Stories from DB:', stories)
         store.dispatch({
             type: SET_STORIES,
@@ -43,7 +43,7 @@ export async function loadStories() {
 
 export async function removeStory(storyId) {
     try {
-        await storieservice.remove(storyId)
+        await storyService.remove(storyId)
         store.dispatch(getActionRemoveStory(storyId))
     } catch (err) {
         console.log('Cannot remove story', err)
@@ -53,7 +53,7 @@ export async function removeStory(storyId) {
 
 export async function addStory(story) {
     try {
-        const savedStory = await storieservice.save(story)
+        const savedStory = await storyService.save(story)
         console.log('Added Story', savedStory)
         store.dispatch(getActionAddStory(savedStory))
         return savedStory
@@ -64,7 +64,7 @@ export async function addStory(story) {
 }
 
 export function updateStory(story) {
-    return storieservice.save(story)
+    return storyService.save(story)
         .then(savedStory => {
             console.log('Updated Story:', savedStory)
             store.dispatch(getActionUpdateStory(savedStory))
@@ -86,7 +86,7 @@ export function removeStoryOptimistic(storyId) {
     })
     showSuccessMsg('Story removed')
 
-    storieservice.remove(storyId)
+    storyService.remove(storyId)
         .then(() => {
             console.log('Server Reported - Deleted Succesfully');
         })

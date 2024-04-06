@@ -80,558 +80,320 @@ function getEmptyStory() {
 
 
 function _createStories() {
-    const story = [
-        {
-            _id: "s104",
-            txt: "Exhibition  curated by @giulioaprin presents a spectrum of aerial photographers that push themselves into finding unusual and different point of view bringing us extraordinary facets of our reality.",
-            imgUrl: ["https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg", "https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg"],
-            by: {
-                _id: "u101",
-                fullname: "Deniska",
-                username: "denchik1996",
-                imgUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    const story = [{
+        '_id': 'smnox',
+        'txt': 'Exhibition curated by @giulioaprin presents a spectrum of aerial photographers that push themselves into finding unusual and different point of view bringing us extraordinary facets of our reality.',
+        'imgUrl': ['https://picsum.photos/seed/picbxyvh/200/300',
+            'https://picsum.photos/seed/picwwajt/200/300',
+            'https://picsum.photos/seed/picgo8m7/200/300'],
+        'by': {
+            '_id': 'uv4k3',
+            'fullname': 'Cameron Davis',
+            'username': 'SlowCat79',
+            'imgUrl': 'https://picsum.photos/seed/picfn9fz/200/300'
+        },
+        'comments': [{
+            'id': 'ct1e9',
+            'by': {
+                '_id': 'uarpe',
+                'username': 'HappyFox33',
+                'fullname': 'Riley Brown',
+                'imgUrl': 'https://picsum.photos/seed/pic6ba7j/200/300'
             },
-            comments: [
-                {
-                    id: "c1005",
-                    by: {
-                        _id: "u105",
-                        username: "Amarama_1990",
-                        fullname: "Bob",
-                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                    },
-
-                    txt: "good one!",
-
-                    likedBy: [
-                        {
-                            _id: "u105",
-                            username: "Amarama_1990",
-                            fullname: "Bob",
-                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                        }
-                    ]
-                }, {
-                    id: "c1001",
-                    by: {
-                        _id: "u105",
-                        username: "miniGun777",
-                        fullname: "Bob",
-                        imgUrl: "https://st2.depositphotos.com/3143277/8644/i/600/depositphotos_86446164-stock-photo-business-man-in-office.jpg"
-                    },
-
-                    txt: "very nice!",
-
-                    likedBy: [
-                        {
-                            _id: "u105",
-                            username: "Amarama_1990",
-                            fullname: "Bob",
-                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                        }
-                    ]
-                },
-
-                {
-                    id: "c1002",
-                    by: {
-                        _id: "u106",
-                        username: "redBread",
-                        fullname: "Dob",
-                        imgUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-                    },
-                    txt: "not good!"
-                }
-            ],
-
-            likedBy: [
-                {
-                    _id: "u105",
-                    fullname: "Bob",
-                    username: "Amarama_1990",
-                    imgUrl: "https://i.pinimg.com/280x280_RS/52/97/74/52977407847a9767757d40bb93644b58.jpg"
-                },
-
-                {
-                    _id: "u106",
-                    fullname: "Dob",
-                    username: "Doby_90",
-                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
-                },
-
-                {
-                    _id: "7zLay",
-                    fullname: "Muki Muka",
-                    username: "Mukomik",
-                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                }
-            ]
+            'txt': 'Amazing shot, really captures the moment.',
+            'likedBy': [{
+                '_id': 'uf07z',
+                'username': 'SmallLion27',
+                'fullname': 'Avery Jones',
+                'imgUrl': 'https://picsum.photos/seed/pica30z6/200/300'
+            }]
         },
         {
-            _id: "s111",
-            txt: "Let Me See Your Likes!",
-            imgUrl: ["https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"],
-            by: {
-                _id: "u101",
-                fullname: "Ulash Ulashi",
-                username: "ulash888",
-                imgUrl: "https://i.pinimg.com/736x/28/3a/b1/283ab1108ef8e379a2e555de019e1aee.jpg"
+            'id': 'cnfro',
+            'by': {
+                '_id': 'uisqp',
+                'username': 'BigLion69',
+                'fullname': 'Avery Moore',
+                'imgUrl': 'https://picsum.photos/seed/pico88xi/200/300'
             },
-            comments: [
-                {
-                    id: "c1001",
-                    by: {
-                        _id: "u105",
-                        fullname: "Bob",
-                        username: "Amarama_1990",
-                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                    },
-
-                    txt: "good one!",
-
-                    likedBy: [
-                        {
-                            _id: "u105",
-                            fullname: "Bob",
-                            username: "Amarama_1990",
-                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                        }
-                    ]
-                },
-
-                {
-                    id: "c1002",
-                    by: {
-                        _id: "u106",
-                        fullname: "Dob",
-                        username: "Doby_90",
-                        imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
-                    },
-                    txt: "not good!"
-                }
-            ],
-
-            likedBy: [
-                {
-                    _id: "u105",
-                    fullname: "Bob",
-                    username: "Amarama_1990",
-                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                },
-
-                {
-                    _id: "u106",
-                    fullname: "Dob",
-                    username: "Doby_90",
-                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
-                }
-            ]
+            'txt': 'Breathtaking view from above.',
+            'likedBy': [{
+                '_id': 'uyhn0',
+                'username': 'BrightDog82',
+                'fullname': 'Jamie Smith',
+                'imgUrl': 'https://picsum.photos/seed/pickm3de/200/300'
+            }]
         },
         {
-            _id: "s123",
-            txt: "Best trip ever",
-            imgUrl: ["https://images.pexels.com/photos/1540977/pexels-photo-1540977.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"],
-            by: {
-                _id: "u102",
-                fullname: "Bobby bob",
-                username: "RobbyBoby21",
-                imgUrl: "https://i.pinimg.com/474x/85/59/09/855909df65727e5c7ba5e11a8c45849a.jpg"
+            'id': 'c1p1s',
+            'by': {
+                '_id': 'uwm1p',
+                'username': 'BrightWolf24',
+                'fullname': 'Avery Johnson',
+                'imgUrl': 'https://picsum.photos/seed/picb24aj/200/300'
             },
-            comments: [
-                {
-                    id: "c1001",
-                    by: {
-                        _id: "u105",
-                        fullname: "Bob",
-                        username: "Amarama_1990",
-                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                    },
-
-                    txt: "good one!",
-
-                    likedBy: [
-                        {
-                            _id: "u105",
-                            fullname: "Bob",
-                            username: "Amarama_1990",
-                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                        }
-                    ]
-                },
-
-                {
-                    id: "c1002",
-                    by: {
-                        _id: "u106",
-                        fullname: "Dob",
-                        username: "Doby_90",
-                        imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
-                    },
-                    txt: "not good!"
-                }
-            ],
-
-            likedBy: [
-                {
-                    _id: "u105",
-                    fullname: "Bob",
-                    username: "Amarama_1990",
-                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                },
-
-                {
-                    _id: "u106",
-                    fullname: "Dob",
-                    username: "Doby_90",
-                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
-                }
-            ]
+            'txt': 'Such a unique angle!',
+            'likedBy': [{
+                '_id': 'usdrm',
+                'username': 'SmallDog63',
+                'fullname': 'Avery Davis',
+                'imgUrl': 'https://picsum.photos/seed/picvth7r/200/300'
+            }]
+        }],
+        'likedBy': [{
+            '_id': 'uwfiv',
+            'fullname': 'Sam Smith',
+            'username': 'BrightTiger77',
+            'imgUrl': 'https://picsum.photos/seed/picheirp/200/300'
+        }]
+    },
+    {
+        '_id': 'sdeci',
+        'txt': 'Exhibition curated by @giulioaprin presents a spectrum of aerial photographers that push themselves into finding unusual and different point of view bringing us extraordinary facets of our reality.',
+        'imgUrl': ['https://picsum.photos/seed/piclanld/200/300',
+            'https://picsum.photos/seed/picv35in/200/300',
+            'https://picsum.photos/seed/pic5hr0n/200/300'],
+        'by': {
+            '_id': 'ua33l',
+            'fullname': 'Jordan Taylor',
+            'username': 'CalmFish45',
+            'imgUrl': 'https://picsum.photos/seed/piceheut/200/300'
+        },
+        'comments': [{
+            'id': 'c29p8',
+            'by': {
+                '_id': 'uwv7v',
+                'username': 'DarkFox41',
+                'fullname': 'Sam Taylor',
+                'imgUrl': 'https://picsum.photos/seed/pic2hj2y/200/300'
+            },
+            'txt': 'Such a unique angle!',
+            'likedBy': [{
+                '_id': 'uld1s',
+                'username': 'BigFish96',
+                'fullname': 'Avery Taylor',
+                'imgUrl': 'https://picsum.photos/seed/piclzd9u/200/300'
+            }]
+        }],
+        'likedBy': [{
+            '_id': 'uxect',
+            'fullname': 'Cameron Davis',
+            'username': 'SadTiger54',
+            'imgUrl': 'https://picsum.photos/seed/picw12zs/200/300'
+        }]
+    },
+    {
+        '_id': 's6ny3',
+        'txt': 'Exhibition curated by @giulioaprin presents a spectrum of aerial photographers that push themselves into finding unusual and different point of view bringing us extraordinary facets of our reality.',
+        'imgUrl': ['https://picsum.photos/seed/picd8sol/200/300',
+            'https://picsum.photos/seed/picz4cqw/200/300',
+            'https://picsum.photos/seed/picef1aq/200/300'],
+        'by': {
+            '_id': 'umft7',
+            'fullname': 'Taylor Smith',
+            'username': 'AngryBear58',
+            'imgUrl': 'https://picsum.photos/seed/picvmf41/200/300'
+        },
+        'comments': [{
+            'id': 'c580l',
+            'by': {
+                '_id': 'u5ayj',
+                'username': 'SadCat78',
+                'fullname': 'Jamie Brown',
+                'imgUrl': 'https://picsum.photos/seed/pic89een/200/300'
+            },
+            'txt': 'This really shows the beauty of our world.',
+            'likedBy': [{
+                '_id': 'ukzkb',
+                'username': 'BrightWolf74',
+                'fullname': 'Morgan Brown',
+                'imgUrl': 'https://picsum.photos/seed/pic1d86g/200/300'
+            }]
         },
         {
-            _id: "s108",
-            txt: "Your reaction? 😍",
-            imgUrl: ["https://images.pexels.com/photos/1557652/pexels-photo-1557652.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"],
-            by: {
-                _id: "u101",
-                fullname: "Baron Baton",
-                username: "bar_bat_001",
-                imgUrl: "https://i.pinimg.com/236x/e9/a5/16/e9a516010926848acc79e80d1670b3ee.jpg"
+            'id': 'cbheo',
+            'by': {
+                '_id': 'uiu1g',
+                'username': 'DarkBear37',
+                'fullname': 'Taylor Johnson',
+                'imgUrl': 'https://picsum.photos/seed/picr7aaz/200/300'
             },
-            comments: [
-                {
-                    id: "c1001",
-                    by: {
-                        _id: "u105",
-                        fullname: "Bob",
-                        username: "Amarama_1990",
-                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                    },
-
-                    txt: "good one!",
-
-                    likedBy: [
-                        {
-                            _id: "u105",
-                            fullname: "Bob",
-                            username: "Amarama_1990",
-                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                        }
-                    ]
-                },
-
-                {
-                    id: "c1002",
-                    by: {
-                        _id: "u106",
-                        fullname: "Dob",
-                        username: "Doby_90",
-                        imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
-                    },
-                    txt: "not good!"
-                }
-            ],
-
-            likedBy: [
-                {
-                    _id: "u105",
-                    username: "Amarama_1990",
-                    fullname: "Bob",
-                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                },
-
-                {
-                    _id: "u106",
-                    fullname: "Dob",
-                    username: "Doby_90",
-                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
-                }
-            ]
+            'txt': 'Breathtaking view from above.',
+            'likedBy': [{
+                '_id': 'u8jq3',
+                'username': 'HappyFox59',
+                'fullname': 'Casey Davis',
+                'imgUrl': 'https://picsum.photos/seed/picgul6y/200/300'
+            }]
+        }],
+        'likedBy': [{
+            '_id': 'uqt4c',
+            'fullname': 'Sam Davis',
+            'username': 'BigShark91',
+            'imgUrl': 'https://picsum.photos/seed/picbtaqt/200/300'
         },
         {
-            _id: "s105",
-            txt: "זמן מוגבל | עד גמר המלאי | ההנחה רק על המלאי הקיים | משלוחים, החזרות והחלפה ראשונה חינם בכל קנייה מעל 400₪ | ללא כפל מבצעים",
-            imgUrl: ["https://media.cntraveler.com/photos/6372794f6b04ae53c818dffc/3:4/w_1476,h_1968,c_limit/Tote%20Bags-2022_00-Lede.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT519pWn4flL9yEPn8BZgqpXos2xiTOpa2sQA&usqp=CAU"],
-            by: {
-                _id: "seller1",
-                fullname: "Lady Shoes & Bags 👠",
-                username: "lady_shoes_and_bags",
-                imgUrl: "https://cdn.shopify.com/s/files/1/0074/6320/7027/articles/ultimate-guide-to-womens-bags_2048x.jpg?v=1572446822"
-            },
-            comments: [
-                {
-                    id: "c1005",
-                    by: {
-                        _id: "u105",
-                        username: "Amarama_1990",
-                        fullname: "Bob",
-                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                    },
-
-                    txt: "אלוהים אדירים , איזה מחיר מציע !",
-
-                    likedBy: [
-                        {
-                            _id: "u105",
-                            username: "Amarama_1990",
-                            fullname: "Bob",
-                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80",
-
-                        },
-
-                        {
-                            _id: "u106",
-                            fullname: "Dob",
-                            username: "Doby_90",
-                            imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
-                        },
-
-                        {
-                            _id: "u101",
-                            fullname: "Baron Baton",
-                            username: "bar_bat_001",
-                            imgUrl: "https://i.pinimg.com/236x/e9/a5/16/e9a516010926848acc79e80d1670b3ee.jpg"
-                        },
-
-                    ]
-                },
-
-                {
-                    id: "c1001",
-                    by: {
-                        _id: "u105",
-                        username: "miniGun777",
-                        fullname: "Bob",
-                        imgUrl: "https://st2.depositphotos.com/3143277/8644/i/600/depositphotos_86446164-stock-photo-business-man-in-office.jpg"
-                    },
-
-                    txt: "very nice!",
-
-                    likedBy: [
-                        {
-                            _id: "u105",
-                            username: "Amarama_1990",
-                            fullname: "Bob",
-                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                        }
-                    ]
-                },
-
-                {
-                    id: "c1002",
-                    by: {
-                        _id: "u106",
-                        username: "redBread",
-                        fullname: "Dob",
-                        imgUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-                    },
-                    txt: "This sale is on fire , keep this spirit"
-                }
-            ],
-
-            likedBy: [
-                {
-                    _id: "u105",
-                    fullname: "Bob",
-                    username: "Amarama_1990",
-                    imgUrl: "https://i.pinimg.com/280x280_RS/52/97/74/52977407847a9767757d40bb93644b58.jpg"
-                },
-
-                {
-                    _id: "u106",
-                    fullname: "Dob",
-                    username: "Doby_90",
-                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
-                },
-
-                {
-                    _id: "7zLay",
-                    fullname: "Muki Muka",
-                    username: "Mukomik",
-                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                },
-
-            ]
+            '_id': 'uybo3',
+            'fullname': 'Riley Smith',
+            'username': 'CalmBird61',
+            'imgUrl': 'https://picsum.photos/seed/pic51e2p/200/300'
         },
         {
-            _id: "s106",
-            txt: "worldwide shipping",
-            imgUrl: ["https://www.dior.com/couture/var/dior/storage/images/pushs-editos/folder-cruise-23-femme2/folder-prelaunch/m9334utzqm928/38188347-1-eng-GB/m9334utzqm928_1440_1200.png",
-                "https://cdn.cliqueinc.com/posts/295126/best-dior-bags-295126-1658183714371-main.700x0c.jpg",
-                "https://www.dior.com/couture/var/dior/storage/images/pushs-editos/folder-cruise-23-femme2/m1286zmdwm884/38149056-1-eng-GB/m1286zmdwm884_1440_1200.jpg"],
-            by: {
-                _id: "seller2",
-                fullname: "myibags",
-                username: "myibags",
-                imgUrl: "https://assets.vogue.com/photos/615347cdd43372473562f36d/4:3/w_939,h_704,c_limit/1216-VO-WELL27-02.jpg"
-            },
-            comments: [
-                {
-                    id: "c1005",
-                    by: {
-                        _id: "u105",
-                        username: "Amarama_1990",
-                        fullname: "Bob",
-                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                    },
-
-                    txt: "good one!",
-
-                    likedBy: [
-                        {
-                            _id: "u105",
-                            username: "Amarama_1990",
-                            fullname: "Bob",
-                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                        }
-                    ]
-                }, {
-                    id: "c1001",
-                    by: {
-                        _id: "u105",
-                        username: "miniGun777",
-                        fullname: "Bob",
-                        imgUrl: "https://st2.depositphotos.com/3143277/8644/i/600/depositphotos_86446164-stock-photo-business-man-in-office.jpg"
-                    },
-
-                    txt: "very nice!",
-
-                    likedBy: [
-                        {
-                            _id: "u105",
-                            username: "Amarama_1990",
-                            fullname: "Bob",
-                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                        }
-                    ]
-                },
-
-                {
-                    id: "c1002",
-                    by: {
-                        _id: "u106",
-                        username: "redBread",
-                        fullname: "Dob",
-                        imgUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-                    },
-                    txt: "not good!"
-                }
-            ],
-
-            likedBy: [
-                {
-                    _id: "u105",
-                    fullname: "Bob",
-                    username: "Amarama_1990",
-                    imgUrl: "https://i.pinimg.com/280x280_RS/52/97/74/52977407847a9767757d40bb93644b58.jpg"
-                },
-
-                {
-                    _id: "u106",
-                    fullname: "Dob",
-                    username: "Doby_90",
-                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
-                },
-
-                {
-                    _id: "7zLay",
-                    fullname: "Muki Muka",
-                    username: "Mukomik",
-                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                }
-            ]
+            '_id': 'uq0c7',
+            'fullname': 'Avery Davis',
+            'username': 'AngryTiger10',
+            'imgUrl': 'https://picsum.photos/seed/picau62j/200/300'
+        }]
+    },
+    {
+        '_id': 'sy9xh',
+        'txt': 'Exhibition curated by @giulioaprin presents a spectrum of aerial photographers that push themselves into finding unusual and different point of view bringing us extraordinary facets of our reality.',
+        'imgUrl': ['https://picsum.photos/seed/picnlf4n/200/300',
+            'https://picsum.photos/seed/pic29hom/200/300',
+            'https://picsum.photos/seed/pic3mvan/200/300'],
+        'by': {
+            '_id': 'uhth1',
+            'fullname': 'Jordan Moore',
+            'username': 'AngryBird45',
+            'imgUrl': 'https://picsum.photos/seed/pic57gu2/200/300'
         },
-
+        'comments': [{
+            'id': 'c2ymd',
+            'by': {
+                '_id': 'u3asw',
+                'username': 'DarkWolf26',
+                'fullname': 'Casey Taylor',
+                'imgUrl': 'https://picsum.photos/seed/pic6lia6/200/300'
+            },
+            'txt': 'Breathtaking view from above.',
+            'likedBy': [{
+                '_id': 'unx1h',
+                'username': 'SlowBear45',
+                'fullname': 'Avery Miller',
+                'imgUrl': 'https://picsum.photos/seed/picy2v68/200/300'
+            }]
+        },
         {
-            _id: "s107",
-            txt: "",
-            imgUrl: ["https://cdn.cliqueinc.com/posts/281381/most-popular-chanel-bags-281381-1563835000997-main.700x0c.jpg",
-                "https://kdvr.com/wp-content/uploads/sites/11/2022/06/000_x-best-chanel-handbag-lookalikes-a5fb98.jpg?w=1280",
-                "https://www.telegraph.co.uk/content/dam/luxury/2021/10/21/GettyImages-1044474606_trans_NvBQzQNjv4BqLzLrDmuUc_Tf9Lumyc958K7Dp_leXmjl6IfADRfEYQs.jpg"],
-            by: {
-                _id: "seller3",
-                fullname: "chanelofficial",
-                username: "chanelofficial",
-                imgUrl: "http://cdn.shopify.com/s/files/1/0434/3103/5031/products/Sticker-autocollant-Logo-chanel-metallique-Deco-Sticker-Store-412.png?v=1672147188"
+            'id': 'citjb',
+            'by': {
+                '_id': 'uhbj8',
+                'username': 'SlowDog87',
+                'fullname': 'Casey Smith',
+                'imgUrl': 'https://picsum.photos/seed/picnz8wq/200/300'
             },
-            comments: [
-                {
-                    id: "c1005",
-                    by: {
-                        _id: "u105",
-                        username: "Amarama_1990",
-                        fullname: "Bob",
-                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                    },
-
-                    txt: "good one!",
-
-                    likedBy: [
-                        {
-                            _id: "u105",
-                            username: "Amarama_1990",
-                            fullname: "Bob",
-                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                        }
-                    ]
-                }, {
-                    id: "c1001",
-                    by: {
-                        _id: "u105",
-                        username: "miniGun777",
-                        fullname: "Bob",
-                        imgUrl: "https://st2.depositphotos.com/3143277/8644/i/600/depositphotos_86446164-stock-photo-business-man-in-office.jpg"
-                    },
-
-                    txt: "very nice!",
-
-                    likedBy: [
-                        {
-                            _id: "u105",
-                            username: "Amarama_1990",
-                            fullname: "Bob",
-                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                        }
-                    ]
-                },
-
-                {
-                    id: "c1002",
-                    by: {
-                        _id: "u106",
-                        username: "redBread",
-                        fullname: "Dob",
-                        imgUrl: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-                    },
-                    txt: "not good!"
-                }
-            ],
-
-            likedBy: [
-                {
-                    _id: "u105",
-                    fullname: "Bob",
-                    username: "Amarama_1990",
-                    imgUrl: "https://i.pinimg.com/280x280_RS/52/97/74/52977407847a9767757d40bb93644b58.jpg"
-                },
-
-                {
-                    _id: "u106",
-                    fullname: "Dob",
-                    username: "Doby_90",
-                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
-                },
-
-                {
-                    _id: "7zLay",
-                    fullname: "Muki Muka",
-                    username: "Mukomik",
-                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                }
-            ]
+            'txt': 'The composition here is fantastic.',
+            'likedBy': [{
+                '_id': 'uydd7',
+                'username': 'HappyDog16',
+                'fullname': 'Avery Brown',
+                'imgUrl': 'https://picsum.photos/seed/picrremr/200/300'
+            }]
+        }],
+        'likedBy': [{
+            '_id': 'uzncb',
+            'fullname': 'Taylor Miller',
+            'username': 'SlowBear13',
+            'imgUrl': 'https://picsum.photos/seed/piclh84g/200/300'
         },
-
-
-    ]
+        {
+            '_id': 'u3fc5',
+            'fullname': 'Sam Johnson',
+            'username': 'SadBear41',
+            'imgUrl': 'https://picsum.photos/seed/pic06499/200/300'
+        },
+        {
+            '_id': 'uyxix',
+            'fullname': 'Sam Miller',
+            'username': 'SmallShark71',
+            'imgUrl': 'https://picsum.photos/seed/pic2sudm/200/300'
+        }]
+    },
+    {
+        '_id': 'snejt',
+        'txt': 'Exhibition curated by @giulioaprin presents a spectrum of aerial photographers that push themselves into finding unusual and different point of view bringing us extraordinary facets of our reality.',
+        'imgUrl': ['https://picsum.photos/seed/picqi21l/200/300',
+            'https://picsum.photos/seed/pic9gzcj/200/300',
+            'https://picsum.photos/seed/picm3vyo/200/300'],
+        'by': {
+            '_id': 'uh9v4',
+            'fullname': 'Riley Johnson',
+            'username': 'HappyFox72',
+            'imgUrl': 'https://picsum.photos/seed/picuojyl/200/300'
+        },
+        'comments': [{
+            'id': 'ch4rl',
+            'by': {
+                '_id': 'ut336',
+                'username': 'BigFox83',
+                'fullname': 'Jordan Brown',
+                'imgUrl': 'https://picsum.photos/seed/picdhobv/200/300'
+            },
+            'txt': 'This really shows the beauty of our world.',
+            'likedBy': [{
+                '_id': 'u00k9',
+                'username': 'FastCat66',
+                'fullname': 'Casey Johnson',
+                'imgUrl': 'https://picsum.photos/seed/picm3bxz/200/300'
+            }]
+        }],
+        'likedBy': [{
+            '_id': 'umurx',
+            'fullname': 'Avery Davis',
+            'username': 'BigFox66',
+            'imgUrl': 'https://picsum.photos/seed/pic89srn/200/300'
+        }]
+    },
+    {
+        '_id': 'sjnb0',
+        'txt': 'Exhibition curated by @giulioaprin presents a spectrum of aerial photographers that push themselves into finding unusual and different point of view bringing us extraordinary facets of our reality.',
+        'imgUrl': ['https://picsum.photos/seed/picsnwd3/200/300',
+            'https://picsum.photos/seed/pic4ved9/200/300',
+            'https://picsum.photos/seed/pic0qnxx/200/300'],
+        'by': {
+            '_id': 'up918',
+            'fullname': 'Cameron Smith',
+            'username': 'FastFish95',
+            'imgUrl': 'https://picsum.photos/seed/picux8zl/200/300'
+        },
+        'comments': [{
+            'id': 'cld9p',
+            'by': {
+                '_id': 'u39ad',
+                'username': 'DarkBear81',
+                'fullname': 'Jamie Brown',
+                'imgUrl': 'https://picsum.photos/seed/picw71zy/200/300'
+            },
+            'txt': 'The composition here is fantastic.',
+            'likedBy': [{
+                '_id': 'uc7t5',
+                'username': 'BigCat35',
+                'fullname': 'Cameron Miller',
+                'imgUrl': 'https://picsum.photos/seed/pict5b6s/200/300'
+            }]
+        },
+        {
+            'id': 'c3s3b',
+            'by': {
+                '_id': 'utoq2',
+                'username': 'CalmShark18',
+                'fullname': 'Casey Davis',
+                'imgUrl': 'https://picsum.photos/seed/picw07i3/200/300'
+            },
+            'txt': 'Amazing shot, really captures the moment.',
+            'likedBy': [{
+                '_id': 'ucorm',
+                'username': 'AngryBear62',
+                'fullname': 'Casey Johnson',
+                'imgUrl': 'https://picsum.photos/seed/pic8ill5/200/300'
+            }]
+        }],
+        'likedBy': [{
+            '_id': 'uzr8q',
+            'fullname': 'Riley Smith',
+            'username': 'CalmBear65',
+            'imgUrl': 'https://picsum.photos/seed/pic11h12/200/300'
+        }]
+    }]
 
     storageService._save(STORAGE_KEY, story)
 }

@@ -100,24 +100,31 @@
 
 import { useDispatch, useSelector } from 'react-redux'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
-import { useEffect } from 'react'
+import { Fragment, useEffect, useState } from 'react'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
+
 import {
     loadStories,
     removeStoryOptimistic,
     // setFilter
 } from '../store/story.actions.js'
+import { loadUsers } from '../store/user.actions';
+
 import { StoryList } from '../cmps/StoryList.jsx'
+import { LoginSignup } from '../cmps/LoginSignup.jsx';
 // import { StoryFilter } from '../cmps/StoryFilter.jsx'
-import { Link } from 'react-router-dom'
 
 export function StoryIndex() {
     const stories = useSelector((storeState) => storeState.storyModule.stories)
     // const filterBy = useSelector((storeState) => storeState.storyModule.filterBy)
     const isLoading = useSelector((storeState) => storeState.storyModule.isLoading)
+    const navigate = useNavigate()
     const user = useSelector((storeState) => storeState.userModule.loggedinUser)
 
     useEffect(() => {
+        if (stories.length && user) return
         loadStories()
+        loadUsers()
     }, [])
 
     async function onRemoveStory(storyId) {
@@ -134,6 +141,7 @@ export function StoryIndex() {
         setFilter(filterBy)
     }
 
+    if (stories.length && !user) return <LoginSignup />
 
     return (
         <div className="story-container">
@@ -142,7 +150,7 @@ export function StoryIndex() {
                 <section className="filter-container">
                     {user && user.isAdmin && (
                         <button className="add-btn">
-                            <Link to="/story/edit">Add story 🧸</Link>
+                            <Link to="/story/edit"><button>Add story 🧸</button></Link>
                         </button>
                     )}
                     {/* <StoryFilter filterBy={filterBy} onSetFilter={onSetFilter} /> */}

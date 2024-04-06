@@ -61,7 +61,6 @@ export const REMOVE_STORY = 'REMOVE_STORY'
 export const SET_LABLES = 'SET_LABLES'
 export const ADD_STORY = 'ADD_STORY'
 export const UPDATE_STORY = 'UPDATE_STORY'
-export const STORY_UNDO = 'STORY_UNDO'
 export const UNDO_REMOVE_STORY = 'UNDO_REMOVE_STORY'
 export const SET_IS_LOADING = 'SET_IS_LOADING'
 
@@ -72,7 +71,7 @@ const initialState = {
     stories: [],
     lastStories: [],
     lastRemovedStory: null,
-    lables: ['Doll', 'Art', 'Battery Powered', 'Talking', 'Beauty', 'Girls', 'Animal', 'Trip', 'Sport', 'Ride']
+    // lables: ['Doll', 'Art', 'Battery Powered', 'Talking', 'Beauty', 'Girls', 'Animal', 'Trip', 'Sport', 'Ride']
 }
 
 export function storyReducer(state = initialState, action) {
@@ -94,9 +93,6 @@ export function storyReducer(state = initialState, action) {
             lastStories = [...state.stories]
             stories = state.stories.filter(story => story._id !== action.storyId)
             return { ...state, stories, lastStories }
-        case STORY_UNDO:
-            stories = [...state.lastStories]
-            return { ...state, stories }
         case SET_IS_LOADING:
             return { ...state, isLoading: action.isLoading }
         case UNDO_REMOVE_STORY:

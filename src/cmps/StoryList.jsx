@@ -25,7 +25,8 @@ export function StoryList({ stories, user, onRemoveStory }) {
     <section className="story">
       <div className="story-list">
         {stories.map((story) => (
-          <div key={story._id}>
+          <div key={story._id}
+            className="story">
             <StoryPreview story={story} user={user} onRemoveStory={onRemoveStory} />
           </div>
         ))}
