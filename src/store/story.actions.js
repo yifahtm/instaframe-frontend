@@ -1,9 +1,9 @@
-import { storyService } from '../services/story.service.local.js'
+import { storieservice } from '../services/story.service.local.js'
 import { userService } from '../services/user.service.js'
 import { store } from './store.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
-import { ADD_STORY, ADD_TO_STORYT, CLEAR_STORYT, REMOVE_STORY, REMOVE_FROM_STORYT, SET_STORYS, UNDO_REMOVE_STORY, UPDATE_STORY } from './story.reducer.js'
-import { SET_SCORE } from './user.reducer.js'
+import { ADD_STORY, REMOVE_STORY, SET_STORIES, UNDO_REMOVE_STORY, UPDATE_STORY } from './story.reducer.js'
+
 
 // Action Creators:
 export function getActionRemoveStory(storyId) {
@@ -25,17 +25,17 @@ export function getActionUpdateStory(story) {
     }
 }
 
-export async function loadStorys() {
+export async function loadStories() {
     try {
-        const storys = await storyService.query()
-        console.log('Storys from DB:', storys)
+        const stories = await storieservice.query()
+        console.log('Stories from DB:', stories)
         store.dispatch({
-            type: SET_STORYS,
-            storys
+            type: SET_STORIES,
+            stories
         })
 
     } catch (err) {
-        console.log('Cannot load storys', err)
+        console.log('Cannot load stories', err)
         throw err
     }
 
@@ -43,7 +43,7 @@ export async function loadStorys() {
 
 export async function removeStory(storyId) {
     try {
-        await storyService.remove(storyId)
+        await storieservice.remove(storyId)
         store.dispatch(getActionRemoveStory(storyId))
     } catch (err) {
         console.log('Cannot remove story', err)
@@ -53,7 +53,7 @@ export async function removeStory(storyId) {
 
 export async function addStory(story) {
     try {
-        const savedStory = await storyService.save(story)
+        const savedStory = await storieservice.save(story)
         console.log('Added Story', savedStory)
         store.dispatch(getActionAddStory(savedStory))
         return savedStory
@@ -64,7 +64,7 @@ export async function addStory(story) {
 }
 
 export function updateStory(story) {
-    return storyService.save(story)
+    return storieservice.save(story)
         .then(savedStory => {
             console.log('Updated Story:', savedStory)
             store.dispatch(getActionUpdateStory(savedStory))
@@ -76,49 +76,23 @@ export function updateStory(story) {
         })
 }
 
-export function addToStoryt(story) {
-    store.dispatch({
-        type: ADD_TO_STORYT,
-        story
-    })
-}
-
-export function removeFromStoryt(storyId) {
-    store.dispatch({
-        type: REMOVE_FROM_STORYT,
-        storyId
-    })
-}
-
-export async function checkout(total) {
-    try {
-        const score = await userService.changeScore(-total)
-        store.dispatch({ type: SET_SCORE, score })
-        store.dispatch({ type: CLEAR_STORYT })
-        return score
-    } catch (err) {
-        console.log('StoryActions: err in checkout', err)
-        throw err
-    }
-}
-
 
 // Demo for Optimistic Mutation 
 // (IOW - Assuming the server call will work, so updating the UI first)
-export function onRemoveStoryOptimistic(storyId) {
+export function removeStoryOptimistic(storyId) {
     store.dispatch({
         type: REMOVE_STORY,
         storyId
     })
     showSuccessMsg('Story removed')
 
-    storyService.remove(storyId)
+    storieservice.remove(storyId)
         .then(() => {
             console.log('Server Reported - Deleted Succesfully');
         })
         .catch(err => {
             showErrorMsg('Cannot remove story')
-            console.log('Cannot load storys', err)
+            console.log('Cannot load stories', err)
             store.dispatch({
                 type: UNDO_REMOVE_STORY,
             })

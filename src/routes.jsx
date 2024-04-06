@@ -13,9 +13,9 @@ const routes = [
     //     label: 'Home 🏠',
     // },
     {
-        path: 'story',
+        path: '/story',
         component: <StoryIndex />,
-        label: 'Storys'
+        label: 'Stories'
     },
     // {
     //     path: 'review',
