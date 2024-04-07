@@ -61,7 +61,7 @@ function getEmptyStory() {
     return {
         // _id: "",
         txt: "",
-        imgUrl: [],
+        imgUrl: 'src/assets/imgs/nasa-yZygONrUBe8-unsplash.jpg',
         comments: [],
         likedBy: [],
         by: {
