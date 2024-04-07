@@ -108,7 +108,7 @@ function getEmptyUser() {
     }
 }
 
-const user1 = {
+const user = {
     username: "Vasya",
     password: "12345",
     fullname: "Vasya Vasilivich",
