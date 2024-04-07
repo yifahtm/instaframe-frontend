@@ -1,0 +1,111 @@
+.navbar {
+
+    .nav-btn {
+        position: relative;
+        // display: flex;
+    }
+
+    .nav-icon {
+        display: flex;
+    }
+
+    nav {
+        gap: 10px;
+    }
+}
+
+
+.navbar {
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+    flex-direction: column;
+    position: fixed;
+    // top: 93.9vh;
+    bottom: 0;
+    z-index: 2;
+    border-top: 1px solid rgb(219, 219, 219);
+    ;
+
+
+    .nav-btn {
+        padding: 5px;
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100vw;
+    }
+
+    img {
+        width: 50px;
+    }
+
+    .nav-btn {
+        color: #262626;
+        width: 30px;
+        // margin-top: 4px;
+        // margin-bottom: 4px;
+        // border-radius: 25px;
+        font-family: 'Segoe UI', sans-serif;
+        text-decoration: none;
+        display: flex;
+        // gap: 10px;
+        align-items: center;
+        cursor: pointer;
+
+        .nav-icon {
+            font-size: 22px;
+            // width: 30px;
+            position: relative;
+
+            img {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+
+        span {
+            font-size: 16px;
+        }
+
+        &.active {
+            color: black;
+            font-weight: 700;
+        }
+
+        &:hover {
+            background-color: #fafafa;
+        }
+
+    }
+
+
+}
+
+
+
+.navbar {
+    // padding: 0.615rem 0.92rem 1.54rem;
+    // display: grid;
+    position: fixed;
+    font-size: 16px;
+    // grid-template-rows: 80px 1fr 10px;
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 245px;
+    border-right: 1px solid rgb(219, 219, 219);
+    z-index: 11;
+
+}

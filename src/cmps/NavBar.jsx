@@ -20,9 +20,9 @@ export function NavBar() {
     // if (!user) return <div className="loading-page"></div>
     return (
         <Fragment>
-            <nav>
+            <nav className="navbar">
                 <NavLink className='nav-btn' to='/'><span className='nav-icon'><i className="fa-solid fa-house"></i></span><span className='nav-name'>Home</span></NavLink>
-                <a className='nav-btn'><span className='nav-icon'><i className="fa-solid fa-magnifying-glass"></i></span><span className='nav-name' >Search</span></a>
+                <a className='nav-btn'><span className='nav-icon'><i className="fa-solid fa-magnifying-glass"></i></span><span className='nav-name'>Search</span></a>
                 <a className='nav-btn'><span className='nav-icon'><i className="fa-regular fa-compass"></i></span><span className='nav-name' >Explore</span></a>
                 <NavLink className='nav-btn' ><span className='nav-icon'><i className="fa-brands fa-facebook-messenger"></i></span><span className='nav-name'>Messages</span></NavLink>
                 <a className='nav-btn'><span className='nav-icon'><i className="fa-regular fa-heart"></i></span><span className='nav-name'>Notifications</span></a>
