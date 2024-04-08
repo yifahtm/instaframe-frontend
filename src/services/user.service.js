@@ -16,6 +16,7 @@ export const userService = {
     update,
     changeScore,
     getEmptyUser,
+    getDemoUser
 }
 
 window.userService = userService
@@ -107,6 +108,38 @@ function getEmptyUser() {
         savedStoryIds: []
     }
 }
+
+function getDemoUser() {
+    return {
+        _id: "u101",
+        username: "Muko",
+        password: "mukmuk",
+        fullname: "Muki Muka",
+        imgUrl: "http://some-img",
+        following: [
+            {
+                _id: "u106",
+                fullname: "Dob",
+                imgUrl: "http://some-img"
+            }
+        ],
+        followers: [
+            {
+                _id: "u105",
+                fullname: "Bob",
+                imgUrl: "http://some-img"
+            }
+        ],
+        savedStoryIds: [
+            "s104",
+            "s111",
+            "s123"
+        ]
+    };
+
+}
+
+
 
 const user = {
     username: "Vasya",

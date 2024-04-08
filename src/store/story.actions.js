@@ -85,7 +85,7 @@ export function removeStoryOptimistic(storyId) {
         storyId
     })
     showSuccessMsg('Story removed')
-
+    console.log(storyId)
     storyService.remove(storyId)
         .then(() => {
             console.log('Server Reported - Deleted Succesfully');

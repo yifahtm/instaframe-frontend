@@ -64,7 +64,7 @@ export const REMOVE_USER = 'REMOVE_USER'
 
 
 const initialState = {
-    loggedinUser: userService.getLoggedinUser(),
+    loggedinUser: userService.getDemoUser(),
     users: [],
 }
 

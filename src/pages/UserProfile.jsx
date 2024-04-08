@@ -33,15 +33,18 @@ export function UserProfile() {
   return (
     <section className="user-Profile">
       <h1>Profile</h1>
-      {/* {user &&  */}
-      {/* <div>
-        <h3>
-          {user.fullname}
-        </h3>
-        <img src={user.imgUrl} style={{ width: '100px' }} />
-        <pre> {JSON.stringify(user, null, 2)} </pre>
-      </div> */}
-      {/* } */}
+
     </section>
   )
 }
+
+
+{/* {user &&  */ }
+{/* <div>
+  <h3>
+    {user.fullname}
+  </h3>
+  <img src={user.imgUrl} style={{ width: '100px' }} />
+  <pre> {JSON.stringify(user, null, 2)} </pre>
+</div> */}
+{/* } */ }

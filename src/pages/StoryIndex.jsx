@@ -127,9 +127,9 @@ export function StoryIndex() {
         loadUsers()
     }, [])
 
-    async function onRemoveStory(storyId) {
+    async function onRemoveStory(story) {
         try {
-            await removeStoryOptimistic(storyId)
+            await removeStoryOptimistic(story._id)
             showSuccessMsg('Story removed')
         } catch (err) {
             console.log('Cannot remove story', err)
