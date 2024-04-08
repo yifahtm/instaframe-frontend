@@ -119,10 +119,10 @@ export function StoryIndex() {
     // const filterBy = useSelector((storeState) => storeState.storyModule.filterBy)
     const isLoading = useSelector((storeState) => storeState.storyModule.isLoading)
     const navigate = useNavigate()
-    const user = useSelector((storeState) => storeState.userModule.loggedinUser)
+    // const user = useSelector((storeState) => storeState.userModule.loggedinUser)
 
     useEffect(() => {
-        if (stories.length && user) return
+        // if (stories.length && user) return
         loadStories()
         loadUsers()
     }, [])
@@ -141,22 +141,20 @@ export function StoryIndex() {
         setFilter(filterBy)
     }
 
-    if (stories.length && !user) return <LoginSignup />
+    // if (stories.length && !user) return <LoginSignup />
 
     return (
         <div className="story-container">
             <main className="main-container">
-                <h1>bloop</h1>
                 <section className="filter-container">
-                    {user && user.isAdmin && (
-                        <button className="add-btn">
-                            <Link to="/story/edit"><button>Add story 🧸</button></Link>
-                        </button>
-                    )}
+
+                    {/* } */}
                     {/* <StoryFilter filterBy={filterBy} onSetFilter={onSetFilter} /> */}
                 </section>
                 {!isLoading && (
-                    <StoryList stories={stories} user={user} onRemoveStory={onRemoveStory} />
+                    <StoryList stories={stories}
+                        //  user={user} 
+                        onRemoveStory={onRemoveStory} />
                 )}
                 {isLoading && <div>Loading...</div>}
             </main>

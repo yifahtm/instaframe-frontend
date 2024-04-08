@@ -1,7 +1,7 @@
 
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
-import { userService } from './user.service.js'
+// import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'story'
 
@@ -43,7 +43,7 @@ async function save(story) {
         savedStory = await storageService.put(STORAGE_KEY, story)
     } else {
         // Later, owner is set by the backend
-        story.owner = userService.getLoggedinUser()
+        // story.owner = userService.getLoggedinUser()
         savedStory = await storageService.post(STORAGE_KEY, story)
     }
     return savedStory
@@ -61,7 +61,7 @@ function getEmptyStory() {
     return {
         // _id: "",
         txt: "",
-        imgUrl: 'src/assets/imgs/nasa-yZygONrUBe8-unsplash.jpg',
+        imgUrl: 'src/assets/imgs/jeremy-thomas-E0AHdsENmDg-unsplash.jpg',
         comments: [],
         likedBy: [],
         by: {

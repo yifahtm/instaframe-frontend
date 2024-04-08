@@ -5,12 +5,12 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { socketService, SOCKET_EVENT_REVIEW_ADDED } from '../services/socket.service'
 
 import { loadReviews, addReview, removeReview, getActionAddReview } from '../store/review.actions'
-import { loadUsers } from '../store/user.actions'
+// import { loadUsers } from '../store/user.actions'
 
 export function Comments() {
 
-  const users = useSelector(storeState => storeState.userModule.users)
-  const loggedInUser = useSelector(storeState => storeState.userModule.user)
+  // const users = useSelector(storeState => storeState.userModule.users)
+  // const loggedInUser = useSelector(storeState => storeState.userModule.user)
   const reviews = useSelector(storeState => storeState.reviewModule.reviews)
 
   const [reviewToEdit, setReviewToEdit] = useState({ txt: '', aboutUserId: '' })
@@ -19,7 +19,7 @@ export function Comments() {
 
   useEffect(() => {
     loadReviews()
-    loadUsers()
+    // loadUsers()
 
     socketService.on(SOCKET_EVENT_REVIEW_ADDED, (review) => {
       console.log('GOT from socket', review)
@@ -58,10 +58,10 @@ export function Comments() {
     }
   }
 
-  function canRemove(review) {
-    if (!loggedInUser) return false
-    return review.byUser._id === loggedInUser._id || loggedInUser.isAdmin
-  }
+  // function canRemove(review) {
+  //   if (!loggedInUser) return false
+  //   return review.byUser._id === loggedInUser._id || loggedInUser.isAdmin
+  // }
 
 
   return (
@@ -88,7 +88,7 @@ export function Comments() {
           </li>
         ))}
       </ul>}
-      {users && loggedInUser &&
+      {/* {users && loggedInUser &&
         <form onSubmit={onAddReview}>
           <select
             onChange={handleChange}
@@ -108,7 +108,7 @@ export function Comments() {
             value={reviewToEdit.txt}
           ></textarea>
           <button>Add</button>
-        </form>}
+        </form>} */}
       <hr />
     </div>
   )

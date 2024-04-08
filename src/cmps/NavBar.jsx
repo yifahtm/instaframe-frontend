@@ -2,23 +2,23 @@ import { Link, NavLink } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { Fragment, useState, useEffect } from 'react'
 import { socketService } from '../services/socket.service.js'
-import { logout } from '../store/user.actions.js'
+// import { logout } from '../store/user.actions.js'
 import { toggleModal } from '../store/system.actions.js'
 import { CreateModal } from './CreateModal.jsx'
 
 export function NavBar() {
-    const user = useSelector(storeState => storeState.userModule.user)
+    // const user = useSelector(storeState => storeState.userModule.user)
     const [full, setFull] = useState(true)
 
-    async function onLogout() {
-        try {
-            await logout()
-            console.log('USER FROM LOGOUT')
+    // async function onLogout() {
+    //     try {
+    //         await logout()
+    //         console.log('USER FROM LOGOUT')
 
-        } catch (err) {
-            console.log(err)
-        }
-    }
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    // }
 
     // if (!user) return <div className="loading-page"></div>
     return (
