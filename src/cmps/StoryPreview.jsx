@@ -26,10 +26,13 @@
 
 
 import { Link } from "react-router-dom";
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
+
+import { ActionList } from "./ActionList.jsx";
 
 export function StoryPreview({ story, user, onRemoveStory }) {
-    const { imgUrl, txt, likedBy, comments } = story
+    const [isListOpen, setIsListOpen] = useState(false)
+
 
     // async function onRemoveStory(story) {
     //     if (story.by._id !== user._id) return
@@ -39,7 +42,7 @@ export function StoryPreview({ story, user, onRemoveStory }) {
     //         console.log(err)
     //     }
     // }
-
+    const { imgUrl, txt, likedBy, comments } = story
     return (
         <section className="story-preview">
             <section className="story-header">
@@ -51,9 +54,12 @@ export function StoryPreview({ story, user, onRemoveStory }) {
                         <time>1h</time>
                     </div>
                 </div>
-                <button
-                    onClick={() => onRemoveStory(story)}
-                    aria-label="More options"><i class="fa-solid fa-ellipsis"></i></button>
+                <button onClick={() => setIsListOpen(!isListOpen)}
+                ><i class="fa-solid fa-ellipsis"></i> {isListOpen && <ActionList
+                    onRemoveStory={onRemoveStory}
+                    story={story}
+                />}
+                </button>
             </section>
             <img className="story-img" src={imgUrl} alt="story"></img>
             {/* <h1>{txt}</h1> */}
