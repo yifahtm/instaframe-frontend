@@ -8,6 +8,7 @@ import { CreateModal } from './CreateModal.jsx'
 
 export function NavBar() {
     // const user = useSelector(storeState => storeState.userModule.user)
+    const isModalOpen = useSelector(storeState => storeState.systemModule.isModalOpen)
     const [full, setFull] = useState(true)
 
     // async function onLogout() {
@@ -31,8 +32,8 @@ export function NavBar() {
         <>
 
             <section className={full ? "nav-bar-full" : "nav-bar-mini"}>
-                <a className='icon' href='/'>
-                    {full ? <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png" /> : null}
+                <a href='/'>
+                    {full ? <h1 className="logo">Instaframe</h1> : null}
                 </a>
                 <nav className="nav-links">
                     <NavLink className='nav-btn' to='/'><span className='nav-icon'><i className="fa-solid fa-house"></i></span><span className='nav-name'>Home</span></NavLink>
@@ -40,7 +41,9 @@ export function NavBar() {
                     <a className='nav-btn'><span className='nav-icon'><i className="fa-regular fa-compass"></i></span><span className='nav-name' >Explore</span></a>
                     <NavLink className='nav-btn' ><span className='nav-icon'><i className="fa-brands fa-facebook-messenger"></i></span><span className='nav-name'>Messages</span></NavLink>
                     <a className='nav-btn'><span className='nav-icon'><i className="fa-regular fa-heart"></i></span><span className='nav-name'>Notifications</span></a>
-                    <a onClick={toggleModal} className='nav-btn mobile'><span className='nav-icon'><i className="fa-regular fa-square-plus"></i></span><span className='nav-name' ><CreateModal /></span></a>
+
+                    <a onClick={toggleModal} className='nav-btn mobile'><span className='nav-icon'><i className="fa-regular fa-square-plus"></i></span><span className='nav-name' >Create</span></a>
+                    {isModalOpen && <CreateModal />}
                     <NavLink className='nav-btn'
                     // to={user.username}
                     >
@@ -48,8 +51,8 @@ export function NavBar() {
                             {/* <img src={user.imgUrl} /> */}
                         </span><span className='nav-name' >Profile</span></NavLink>
                 </nav>
-                <div>
-                    More...
+                <div className="more">
+                    <a className='nav-btn'><span className='nav-icon'><i className="fa-solid fa-bars"></i></span><span className='nav-name' >More</span></a>
                 </div>
             </section>
         </>

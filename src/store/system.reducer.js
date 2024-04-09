@@ -14,6 +14,7 @@ export function systemReducer(state = initialState, action = {}) {
     case LOADING_DONE:
       return { ...state, isLoading: false }
     case TOGGLE_MODAL:
+      console.log('bkier')
       return { ...state, isModalOpen: !state.isModalOpen }
     default: return state
   }
