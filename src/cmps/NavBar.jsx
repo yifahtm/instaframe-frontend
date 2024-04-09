@@ -20,21 +20,21 @@ export function NavBar() {
     //     }
     // }
 
+    {/* 
+                <div className='test'>
+                    <div className='nav-header-btns'>
+                        <a onClick={toggleModal} className='nav-btn'><i className="fa-regular fa-square-plus"></i></a>
+                    </div>
+                </div> */}
     // if (!user) return <div className="loading-page"></div>
     return (
-        <Fragment>
+        <>
 
-            <div className='test'>
-                <div className='nav-header-btns'>
-                    <a onClick={toggleModal} className='nav-btn'><i className="fa-regular fa-square-plus"></i></a>
-                </div>
-            </div>
-
-            <section className={full ? "side-bar" : "side-bar mini"}>
+            <section className={full ? "nav-bar-full" : "nav-bar-mini"}>
                 <a className='icon' href='/'>
                     {full ? <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png" /> : null}
                 </a>
-                <nav className="navbar">
+                <nav className="nav-links">
                     <NavLink className='nav-btn' to='/'><span className='nav-icon'><i className="fa-solid fa-house"></i></span><span className='nav-name'>Home</span></NavLink>
                     <a className='nav-btn'><span className='nav-icon'><i className="fa-solid fa-magnifying-glass"></i></span><span className='nav-name'>Search</span></a>
                     <a className='nav-btn'><span className='nav-icon'><i className="fa-regular fa-compass"></i></span><span className='nav-name' >Explore</span></a>
@@ -48,7 +48,10 @@ export function NavBar() {
                             {/* <img src={user.imgUrl} /> */}
                         </span><span className='nav-name' >Profile</span></NavLink>
                 </nav>
+                <div>
+                    More...
+                </div>
             </section>
-        </Fragment >
+        </>
     )
 }

@@ -1,40 +1,21 @@
-.navbar {
-
-    .nav-btn {
-        position: relative;
-        // display: flex;
-    }
-
-    .nav-icon {
-        display: flex;
-    }
-
-    nav {
-        gap: 10px;
-    }
-}
-
-
-.navbar {
+.nav-bar-full {
+    display: grid;
+    font-size: 16px;
+    grid-template-rows: 80PX 1FR 80PX;
+    /* JUSTIFY-CONTENT: space-between; */
     background-color: rgb(255, 255, 255);
-    height: 50px;
-    width: 100%;
-    display: flex;
-    // justify-content: center;
-    // align-items: center;
-    flex-direction: column;
-    position: fixed;
-    // top: 93.9vh;
-    bottom: 0;
-    z-index: 2;
-    border-top: 1px solid rgb(219, 219, 219);
-    ;
+    height: 100VH;
+    border-right: 1px solid rgb(219, 219, 219);
+    z-index: 11;
+    position: sticky;
+    top: 0;
 
     .icon {
         padding: 25px 12px 16px;
-        width: 20px;
-        height: 50px;
-        margin-bottom: 20px;
+        // width: 20px;
+        // height: 50px;
+        margin-bottom: -50px;
+
     }
 
     .nav-btn {
@@ -43,35 +24,11 @@
         display: flex;
         align-items: center;
         justify-content: start;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100vw;
-    }
-
-    img {
-        width: 50px;
-    }
-
-    .nav-btn {
-        color: #262626;
+        color: $clr7;
         width: 30px;
-        // margin-top: 4px;
-        // margin-bottom: 4px;
-        // border-radius: 25px;
-        font-family: 'Segoe UI', sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         text-decoration: none;
-        display: flex;
-        // gap: 10px;
-        align-items: center;
         cursor: pointer;
-
-        &:hover {
-            background-color: #fafafa;
-        }
 
         .nav-icon {
             font-size: 22px;
@@ -83,6 +40,9 @@
                 height: 28px;
                 border-radius: 50%;
                 object-fit: cover;
+
+                width: 50px;
+
             }
         }
 
@@ -91,31 +51,26 @@
         }
 
         &.active {
-            color: black;
+            color: $clr7;
             font-weight: 700;
         }
 
         &:hover {
             background-color: #fafafa;
+
+            .nav-icon {
+                scale: 1.1;
+            }
         }
 
     }
 
-
 }
 
-
-
-.navbar {
-    padding: 0.615rem 0.92rem 1.54rem;
-    display: grid;
-    position: fixed;
-    font-size: 16px;
-    grid-template-rows: 80px 1fr 10px;
-    background-color: rgb(255, 255, 255);
-    height: 100vh;
-    width: 245px;
-    border-right: 1px solid rgb(219, 219, 219);
-    z-index: 11;
-
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20PX;
+    padding-inline-start: 15PX;
 }
