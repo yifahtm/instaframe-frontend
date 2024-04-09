@@ -46,18 +46,18 @@ export function CreateModal() {
 
     return (
         <div className='create-modal' onClick={toggleModal}>
-            <div className='create-post' onClick={onModal}>
+            <div className='create-story' onClick={onModal}>
                 <header>
                     <a onClick={toggleModal}><i className="fa-solid fa-arrow-left"></i></a>
                     <span>Create new story</span>
                     <a className='share-btn' onClick={onSaveStory}>Share</a>
                 </header>
-                <div className='create-post-container'>
+                <div className='create-story-container'>
                     <section className='img-section'>
                         {createStory.imgUrl.length ? <img src={createStory.imgUrl} /> :
                             <ImgUploader onUploadSuccess={onUploadSuccess} />}
                     </section>
-                    <section className='post-info'>
+                    <section className='story-info'>
                         <form onSubmit={onSaveStory}>
                             <label htmlFor="text"></label>
                             <textarea type="text"
