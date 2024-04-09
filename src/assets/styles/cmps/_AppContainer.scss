@@ -1,6 +1,10 @@
 .app-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
     grid-template-columns: 350px 1fr;
+
+    .contant-container {
+        max-width: 400px;
+        justify-self: center
+    }
 
 }

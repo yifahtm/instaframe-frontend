@@ -37,8 +37,8 @@
             font-size: 16px;
 
             &:hover {
-                color: rgb(38, 38, 38);
-                fill: rgb(38, 38, 38);
+                color: $clr7;
+                fill: $clr7;
             }
         }
     }
@@ -47,9 +47,9 @@
         color: #8e8e8e;
         font-size: 14px;
 
-        span {
-            padding-right: 5px;
-        }
+        // span {
+        //     padding-right: 5px;
+        // }
     }
 
     .story-img {
@@ -60,7 +60,7 @@
     .story-footer {
         display: flex;
         flex-direction: column;
-        background-color: #fff;
+        background-color: $clr6;
         padding-bottom: 20px;
         font-size: 15px;
         gap: 7px;
@@ -117,10 +117,10 @@
         }
     }
 
-    .link {
-        text-decoration: none;
+    // .link {
+    //     text-decoration: none;
 
-    }
+    // }
 
     .story-likes {
         font-weight: 600;
@@ -130,7 +130,7 @@
     .story-user-name {
         font-weight: 600;
         cursor: pointer;
-        color: black;
+        color: $clr7;
 
     }
 
