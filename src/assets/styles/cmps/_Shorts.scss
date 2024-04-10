@@ -1,0 +1,32 @@
+.shorts-container {
+    display: flex;
+    gap: 12px;
+    margin-inline-start: 12px;
+    height: 110px;
+
+    .short {
+        position: relative;
+        align-self: center;
+
+        width: 90px;
+        height: 90px;
+
+        & img {
+            border-radius: 50px;
+        }
+
+        & .add-short {
+            position: absolute;
+            bottom: -2px;
+            right: 0px;
+            font-size: 30px;
+            // width: 100px;
+            // height: 100px;
+            padding: 3px;
+            border-radius: 50%;
+            background-color: $clr6;
+            color: #0691e8
+        }
+
+    }
+}

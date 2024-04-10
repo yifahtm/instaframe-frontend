@@ -99,9 +99,13 @@
 // }
 
 import { useDispatch, useSelector } from 'react-redux'
-import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { Fragment, useEffect, useState } from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
+
+
+import { Shorts } from '../cmps/Shorts.jsx'
+
+import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 
 import {
     loadStories,
@@ -112,14 +116,16 @@ import { loadUsers } from '../store/user.actions';
 
 import { StoryList } from '../cmps/StoryList.jsx'
 import { LoginSignup } from '../cmps/LoginSignup.jsx';
+import { LikesModal } from '../cmps/LikesModal.jsx';
 // import { StoryFilter } from '../cmps/StoryFilter.jsx'
 
 export function StoryIndex() {
     const stories = useSelector((storeState) => storeState.storyModule.stories)
-    // const filterBy = useSelector((storeState) => storeState.storyModule.filterBy)
     const isLoading = useSelector((storeState) => storeState.storyModule.isLoading)
-    const navigate = useNavigate()
     // const user = useSelector((storeState) => storeState.userModule.loggedinUser)
+    // const filterBy = useSelector((storeState) => storeState.storyModule.filterBy)
+    const [likes, likesIsOpen] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         // if (stories.length && user) return
@@ -144,20 +150,27 @@ export function StoryIndex() {
     // if (stories.length && !user) return <LoginSignup />
 
     return (
-        <div className="story-container">
-            <main className="main-container">
-                <section className="filter-container">
+        <>
+            <Shorts />
+            <div className="story-container">
+                <main className="main-container">
+                    {/* <section className="filter-container"> */}
 
                     {/* } */}
                     {/* <StoryFilter filterBy={filterBy} onSetFilter={onSetFilter} /> */}
-                </section>
-                {!isLoading && (
-                    <StoryList stories={stories}
-                        //  user={user} 
-                        onRemoveStory={onRemoveStory} />
-                )}
-                {isLoading && <div>Loading...</div>}
-            </main>
-        </div>
+                    {/* </section> */}
+
+                    {/* {likes.length ? <LikesModal likesIsOpen={likesIsOpen} likes={likes} /> : null} */}
+
+                    {!isLoading && (
+                        <StoryList stories={stories}
+                            //  user={user} 
+                            onRemoveStory={onRemoveStory}
+                            likesIsOpen={likesIsOpen} />
+                    )}
+                    {isLoading && <div>Loading...</div>}
+                </main>
+            </div>
+        </>
     )
 }
