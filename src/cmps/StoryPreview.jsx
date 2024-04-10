@@ -91,20 +91,26 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen }) {
                     // checkLike={checkLike}
                     />
                 </div>
-                {likedBy.length ? <section> <img src={likedBy[0].imgUrl} /><span>Liked by</span> <Link to={likedBy[0].username} className="story-user-name link">{likedBy[0].username}</Link> {likedBy.length > 1 && <div><span>and </span>
+                {/* {likedBy.length ? <section> <img src={likedBy[0].imgUrl} /><span>Liked by</span> <Link to={likedBy[0].username} className="story-user-name link">{likedBy[0].username}</Link> {likedBy.length > 1 && <div><span>and </span>
 
-                    {/* <a onClick={() => likesIsOpen(likedBy)} className="story-likes">{likedBy.length - 1} others</a> */}
+                    <a onClick={() => likesIsOpen(likedBy)} className="story-likes">{likedBy.length - 1} others</a>
 
-                </div>}</section> : null}
+                </div>}</section> : null} */}
+                <div className="likes-preview">
+                    <span>{likedBy.length} {likedBy.length > 1 ? 'Likes' : 'Like'}</span>
+                </div>
 
                 <div><Link to={story.by.username} className="story-user-name link">{story.by.username}</Link> <span className="story-text">{txt}</span></div>
-                {comments.length > 2 && <Link className="link" to={`/${story._id}`}>
-                    <span className="story-comments-view">
-                        View all {comments.length} comments
-                    </span>
-                </Link>}
-                {comments.length > 1 ? <a className="story-comment"><span className="story-user-name">{comments[comments.length - 2].by.username}</span> <span className="story-text">{comments[comments.length - 2].txt}</span></a> : null}
-                {comments.length ? <a className="story-comment"><span className="story-user-name">{comments[comments.length - 1].by.username}</span> <span className="story-text">{comments[comments.length - 1].txt}</span></a> : null}
+                {/* {comments.length > 1 ? <a className="story-comment"><span className="story-user-name">{comments[comments.length - 2].by.username}</span> <span className="story-text">{comments[comments.length - 2].txt}</span></a> : null} */}
+                {/* {comments.length ? <a className="story-comment"><span className="story-user-name">{comments[comments.length - 1].by.username}</span> <span className="story-text">{comments[comments.length - 1].txt}</span></a> : null} */}
+
+                {comments.length > 0 &&
+                    <Link className="link" to={`/${story._id}`}>
+                        <span className="story-comments-view">
+                            View {comments.length > 1 ? 'all' : ''} {comments.length} {comments.length > 1 ? 'comments' : 'comment'}
+                        </span>
+                    </Link>}
+
                 {/* <MsgForm comment={comment} setComment={setComment} addStoryComment={addStoryComment} /> */}
             </section>
 

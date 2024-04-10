@@ -48,7 +48,7 @@ export function NavBar() {
                     // to={user.username}
                     >
                         <span className='nav-icon'>
-                            {/* <img src={user.imgUrl} /> */}
+                            <img src='https://xsgames.co/randomusers/assets/avatars/female/73.jpg' />
                         </span><span className='nav-name' >Profile</span></NavLink>
                 </nav>
                 <div className="more">

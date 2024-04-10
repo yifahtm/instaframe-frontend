@@ -13,8 +13,9 @@
 
     .logo {
         font-family: "Pacifico", cursive;
+        font-weight: 100;
         font-size: 40px;
-        padding: 25px 12px;
+        padding: 25px 13px;
     }
 
     .nav-links {
@@ -22,11 +23,12 @@
         flex-direction: column;
         justify-content: center;
         gap: 20PX;
-        padding-inline-start: 15PX;
+        // padding-inline-start: 15PX;
     }
 
     .more {
-        padding: 10px;
+        padding: 10px 0px;
+        align-self: end;
     }
 
     .nav-btn {
@@ -51,9 +53,6 @@
                 height: 28px;
                 border-radius: 50%;
                 object-fit: cover;
-
-                width: 50px;
-
             }
         }
 
