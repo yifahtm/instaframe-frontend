@@ -184,6 +184,14 @@
     height: 100vh;
     z-index: 15;
     background-color: rgba(0, 0, 0, 0.645);
+
+    .btn-close {
+        position: absolute;
+        right: 40px;
+        top: 20px;
+        color: $clr6;
+        font-size: 30px;
+    }
 }
 
 
