@@ -122,13 +122,13 @@ import { LikesModal } from '../cmps/LikesModal.jsx';
 export function StoryIndex() {
     const stories = useSelector((storeState) => storeState.storyModule.stories)
     const isLoading = useSelector((storeState) => storeState.storyModule.isLoading)
-    // const user = useSelector((storeState) => storeState.userModule.loggedinUser)
+    const user = useSelector((storeState) => storeState.userModule.loggedinUser)
     // const filterBy = useSelector((storeState) => storeState.storyModule.filterBy)
     const [likes, likesIsOpen] = useState([])
     const navigate = useNavigate()
 
     useEffect(() => {
-        // if (stories.length && user) return
+        if (stories.length && user) return
         loadStories()
         loadUsers()
     }, [])
@@ -147,11 +147,18 @@ export function StoryIndex() {
         setFilter(filterBy)
     }
 
+    function goToProfile() {
+        navigate('/:username')
+    }
+
     // if (stories.length && !user) return <LoginSignup />
 
     return (
         <>
             <Shorts />
+            <div className="nested-route">
+                <Outlet />
+            </div>
             <div className="story-container">
                 <main className="main-container">
                     {/* <section className="filter-container"> */}
@@ -160,13 +167,12 @@ export function StoryIndex() {
                     {/* <StoryFilter filterBy={filterBy} onSetFilter={onSetFilter} /> */}
                     {/* </section> */}
 
-                    {/* {likes.length ? <LikesModal likesIsOpen={likesIsOpen} likes={likes} /> : null} */}
-
                     {!isLoading && (
                         <StoryList stories={stories}
-                            //  user={user} 
+                            user={user}
                             onRemoveStory={onRemoveStory}
-                            likesIsOpen={likesIsOpen} />
+                            likesIsOpen={likesIsOpen}
+                            likes={likes} />
                     )}
                     {isLoading && <div>Loading...</div>}
                 </main>

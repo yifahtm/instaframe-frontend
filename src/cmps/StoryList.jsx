@@ -17,10 +17,9 @@
 // }
 
 import { Link } from 'react-router-dom'
-import { StoryPreview } from './StoryPreview'
-// import { CardStoryPreview } from './CardStoryPreview'
+import { StoryPreview } from './StoryPreview.jsx'
 
-export function StoryList({ stories, user, onRemoveStory }) {
+export function StoryList({ stories, user, onRemoveStory, likesIsOpen, likes }) {
   return (
     <section className="story">
       <div className="story-list">
@@ -28,8 +27,10 @@ export function StoryList({ stories, user, onRemoveStory }) {
           <div key={story._id}
             className="story">
             <StoryPreview story={story}
-              //  user={user} 
-              onRemoveStory={onRemoveStory} />
+              user={user}
+              onRemoveStory={onRemoveStory}
+              likesIsOpen={likesIsOpen}
+              likes={likes} />
           </div>
         ))}
       </div>

@@ -29,37 +29,41 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from 'react'
 
+import { removeStoryOptimistic } from "../store/story.actions.js";
+
 import { ActionList } from "./ActionList.jsx";
 import { Actions } from "./Actions.jsx";
+import { LikesModal } from "./LikesModal.jsx";
 
 import { storyService } from "../services/story.service.local.js";
+import { userService } from "../services/user.service.js";
 
-export function StoryPreview({ story, user, onRemoveStory, likesIsOpen }) {
+export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes }) {
     const [isListOpen, setIsListOpen] = useState(false)
     const [like, setLike] = useState('')
-    // const user = useSelector(storeState => storeState.userModule.user)
+    // const user = useSelector(storeState => storeState.userModule.loggedInUser)
 
     function checkLike() {
         return likedBy.some(likedUser => likedUser._id === user._id)
     }
 
-    // function toggleLike() {
-    //     if (checkLike()) {
-    //         const idx = likedBy.findIndex(likedUser => likedUser._id === user._id)
-    //         likedBy.splice(idx, 1)
-    //     }
+    function toggleLike() {
+        if (checkLike()) {
+            const idx = likedBy.findIndex(likedUser => likedUser._id === user._id)
+            likedBy.splice(idx, 1)
+        }
 
-    //     else {
-    //         likedBy.push({
-    //             _id: user._id,
-    //             fullname: user.fullname,
-    //             username: user.username,
-    //             imgUrl: user.imgUrl
-    //         })
-    //     }
-    //     storyService.save(story)
-    //     setLike(checkLike())
-    // }
+        else {
+            likedBy.push({
+                _id: user._id,
+                fullname: user.fullname,
+                username: user.username,
+                imgUrl: user.imgUrl
+            })
+        }
+        storyService.save(story)
+        setLike(checkLike())
+    }
 
     const { imgUrl, txt, likedBy, comments } = story
     return (
@@ -87,8 +91,8 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen }) {
                     <Actions
                         story={story}
                         likesIsOpen={likesIsOpen}
-                    // toggleLike={toggleLike}
-                    // checkLike={checkLike}
+                        toggleLike={toggleLike}
+                        checkLike={checkLike}
                     />
                 </div>
                 {/* {likedBy.length ? <section> <img src={likedBy[0].imgUrl} /><span>Liked by</span> <Link to={likedBy[0].username} className="story-user-name link">{likedBy[0].username}</Link> {likedBy.length > 1 && <div><span>and </span>
@@ -96,9 +100,15 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen }) {
                     <a onClick={() => likesIsOpen(likedBy)} className="story-likes">{likedBy.length - 1} others</a>
 
                 </div>}</section> : null} */}
-                <div className="likes-preview">
-                    <span>{likedBy.length} {likedBy.length > 1 ? 'Likes' : 'Like'}</span>
-                </div>
+                {likedBy.length &&
+                    <>
+                        <div className="likes-preview">
+                            <span>{likedBy.length} {likedBy.length > 1 ? 'Likes' : 'Like'}</span>
+                        </div>
+                        {/* <LikesModal likesIsOpen={likesIsOpen} likes={likes} /> */}
+                    </>
+                }
+
 
                 <div><Link to={story.by.username} className="story-user-name link">{story.by.username}</Link> <span className="story-text">{txt}</span></div>
                 {/* {comments.length > 1 ? <a className="story-comment"><span className="story-user-name">{comments[comments.length - 2].by.username}</span> <span className="story-text">{comments[comments.length - 2].txt}</span></a> : null} */}
