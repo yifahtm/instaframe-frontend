@@ -1,0 +1,15 @@
+ .msg-input {
+     display: flex;
+     border: none;
+     width: 95%;
+
+     &:focus {
+         outline: none;
+         background-color: rgba(255, 255, 255, 0);
+
+     }
+ }
+
+ form {
+     padding: 4px 0;
+ }

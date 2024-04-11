@@ -109,7 +109,7 @@ function _createStories() {
                             username: "Amarama_1990",
                             fullname: "Bob",
                             imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
-                        }
+                        },
                     ]
                 }, {
                     id: "c1001",

@@ -34,6 +34,7 @@ import { removeStoryOptimistic } from "../store/story.actions.js";
 import { ActionList } from "./ActionList.jsx";
 import { Actions } from "./Actions.jsx";
 import { LikesModal } from "./LikesModal.jsx";
+import { MsgForm } from "./MsgForm.jsx";
 
 import { storyService } from "../services/story.service.local.js";
 import { userService } from "../services/user.service.js";
@@ -41,6 +42,7 @@ import { userService } from "../services/user.service.js";
 export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes }) {
     const [isListOpen, setIsListOpen] = useState(false)
     const [like, setLike] = useState('')
+    const [comment, setComment] = useState({ txt: '' })
     // const user = useSelector(storeState => storeState.userModule.loggedInUser)
 
     function checkLike() {
@@ -63,6 +65,15 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes })
         }
         storyService.save(story)
         setLike(checkLike())
+    }
+
+    async function addStoryComment(ev) {
+        ev.preventDefault()
+        const newComment = storyService.addStoryCmt(comment.txt, user)
+        story.comments.push(newComment)
+        await storyService.save(story)
+
+        setComment({ txt: '' })
     }
 
     const { imgUrl, txt, likedBy, comments } = story
@@ -121,7 +132,7 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes })
                         </span>
                     </Link>}
 
-                {/* <MsgForm comment={comment} setComment={setComment} addStoryComment={addStoryComment} /> */}
+                <MsgForm comment={comment} setComment={setComment} addStoryComment={addStoryComment} />
             </section>
 
         </section>
