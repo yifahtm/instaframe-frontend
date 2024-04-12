@@ -14,27 +14,46 @@
     .logo {
         font-family: "Pacifico", cursive;
         font-weight: 100;
-        font-size: 40px;
-        padding: 25px 13px;
+        font-size: 26px;
+        padding: 39px 13px;
     }
 
     .nav-links {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 20PX;
+        display: grid;
+        grid-template-rows: repeat(3, 2.5rem) repeat(3, 1.9rem);
+        grid-template-columns: auto 1fr;
+        // flex-direction: column;
+        // justify-content: center;
+        gap: 18px;
+        margin-top: -18px;
+        margin-left: 10px;
         // padding-inline-start: 15PX;
     }
 
     .more {
-        padding: 10px 0px;
+        // padding: 10px 0px;
+
+        // margin-bottom: 0;
+        display: flex;
+        max-width: 200px;
         align-self: end;
+        margin-bottom: -5px;
+        margin-left: 15px;
+
+        .more>* {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            // gap: 20px
+        }
     }
 
     .nav-btn {
-        padding: 10px;
+        padding: 7px;
         font-size: 22px;
-        display: flex;
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 1/-1;
         align-items: center;
         justify-content: start;
         color: $clr7;
@@ -43,14 +62,38 @@
         text-decoration: none;
         cursor: pointer;
 
+        // .btns-dif-spacing {
+        //     display: flex;
+        //     flex-direction: column;
+        //     gap: 14px;
+
+        //     & .messages {
+        //         margin-top: 20px
+        //     }
+
+        //     & .notifications {
+        //         margin-top: 20px
+        //     }
+
+        //     & .create {
+        //         margin-top: 20px
+        //     }
+
+        //     & .profile {
+        //         margin-top: 20px
+        //     }
+
+        // }
+
+
         .nav-icon {
-            font-size: 22px;
+            font-size: 23px;
             // width: 30px;
             position: relative;
 
             img {
-                width: 28px;
-                height: 28px;
+                width: 25px;
+                height: 25px;
                 border-radius: 50%;
                 object-fit: cover;
             }
@@ -60,13 +103,14 @@
             font-size: 16px;
         }
 
-        &.active {
+        &.activated {
             color: $clr7;
             font-weight: 700;
         }
 
         &:hover {
             background-color: #fafafa;
+            // width: 2000px;
 
             .nav-icon {
                 scale: 1.1;

@@ -1,11 +1,14 @@
 button {
     border: 0;
-    background-color: $clr6;
-    color: $clr7;
+    background-color: #fff;
+    color: #222;
     padding: 0;
-    margin: 0;
+    margin-top: 13px;
     cursor: pointer;
+    margin-right: 6px;
 }
+
+
 
 form>* {
     display: block;

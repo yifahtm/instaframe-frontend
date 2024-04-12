@@ -10,7 +10,7 @@
         justify-content: space-between;
         align-items: center;
         height: 56px;
-        margin: 15px 0 7px 0;
+        margin: 5px 0 7px 0;
         background-color: #fff;
 
         .header-info {
@@ -18,11 +18,12 @@
             align-items: center;
 
             img {
-                width: 42px;
-                height: 42px;
+                width: 36px;
+                height: 36px;
                 object-fit: cover;
                 border-radius: 50%;
                 cursor: pointer;
+                margin-top: 10px;
             }
 
             a {
@@ -30,6 +31,24 @@
                 font-size: 14px;
                 padding: 0 5px;
                 cursor: pointer;
+                justify-self: start;
+                margin-top: -6px;
+            }
+
+            button {
+                font-size: 18px;
+            }
+
+            .fa-ellipsis {
+                font-size: 18px;
+            }
+
+            .btn-actions {
+                margin-top: 18px;
+                font-size: large;
+                font-weight: 1000;
+                margin-top: 12px;
+                margin-right: 5px
             }
         }
 
@@ -57,6 +76,7 @@
 
     .story-img {
         max-height: 580;
+        border-radius: 3px;
         object-fit: cover;
     }
 
@@ -100,12 +120,12 @@
 
     .btn-container {
         display: flex;
-        gap: 13px;
+        gap: 15px;
         position: relative;
 
         a {
             font-size: 24px;
-            padding: 17px 5px 0px;
+            padding: 15px 1px 0px;
             cursor: pointer;
             color: black;
 
@@ -119,11 +139,19 @@
             .fa-solid.fa-heart {
                 color: #ed4956;
             }
+
+            .fa-paper-plane {
+                transform: rotate(30deg);
+                margin-top: -3px;
+                margin-left: -6px;
+                font-size: 20px;
+            }
         }
 
         .saved-btn {
             position: absolute;
             right: 5px;
+            font-size: 23px
         }
     }
 
@@ -138,7 +166,7 @@
     // }
 
     .likes-preview {
-        margin: 0.5em 0;
+        margin-top: 5px;
         font-weight: 500;
     }
 
