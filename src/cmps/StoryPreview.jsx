@@ -34,7 +34,7 @@ import { removeStoryOptimistic } from "../store/story.actions.js";
 import { ActionList } from "./ActionList.jsx";
 import { Actions } from "./Actions.jsx";
 import { LikesModal } from "./LikesModal.jsx";
-import { MsgForm } from "./MsgForm.jsx";
+import { TxtInput } from "./TxtInput.jsx";
 
 import { storyService } from "../services/story.service.local.js";
 import { userService } from "../services/user.service.js";
@@ -43,6 +43,7 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes })
     const [isListOpen, setIsListOpen] = useState(false)
     const [like, setLike] = useState('')
     const [comment, setComment] = useState({ txt: '' })
+    const [save, setSave] = useState('')
     // const user = useSelector(storeState => storeState.userModule.loggedInUser)
 
     function checkLike() {
@@ -65,6 +66,21 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes })
         }
         storyService.save(story)
         setLike(checkLike())
+    }
+
+    function checkSave() {
+        return user.savedStoryIds.some(id => id === story._id)
+    }
+
+    function toggleSave() {
+        if (checkSave()) {
+            const idx = user.savedStoryIds.findIndex(id => id === story._id)
+            user.savedStoryIds.splice(idx, 1)
+        }
+
+        else user.savedStoryIds.push(story._id)
+        userService.update(user)
+        setSave(checkSave())
     }
 
     async function addStoryComment(ev) {
@@ -104,6 +120,8 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes })
                         likesIsOpen={likesIsOpen}
                         toggleLike={toggleLike}
                         checkLike={checkLike}
+                        toggleSave={toggleSave}
+                        checkSave={checkSave}
                     />
                 </div>
                 {/* {likedBy.length ? <section> <img src={likedBy[0].imgUrl} /><span>Liked by</span> <Link to={likedBy[0].username} className="story-user-name link">{likedBy[0].username}</Link> {likedBy.length > 1 && <div><span>and </span>
@@ -126,13 +144,13 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes })
                 {/* {comments.length ? <a className="story-comment"><span className="story-user-name">{comments[comments.length - 1].by.username}</span> <span className="story-text">{comments[comments.length - 1].txt}</span></a> : null} */}
 
                 {comments.length > 0 &&
-                    <Link className="link" to={`/${story._id}`}>
+                    <Link className="link" to={`/story/${story._id}`}>
                         <span className="story-comments-view">
                             View {comments.length > 1 ? 'all' : ''} {comments.length} {comments.length > 1 ? 'comments' : 'comment'}
                         </span>
                     </Link>}
 
-                <MsgForm comment={comment} setComment={setComment} addStoryComment={addStoryComment} />
+                <TxtInput comment={comment} setComment={setComment} addStoryComment={addStoryComment} />
             </section>
 
         </section>
