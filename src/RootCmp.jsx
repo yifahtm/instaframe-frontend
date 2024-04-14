@@ -1,25 +1,33 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
 
-import routes from './routes'
-
 import { AppHeader } from './cmps/AppHeader'
+import { NavBar } from './cmps/NavBar.jsx'
 import { AppFooter } from './cmps/AppFooter'
-import { UserProfile } from './pages/UserProfile'
+import { StoryDetails } from './cmps/StoryDetails.jsx'
+import { StoryIndex } from './pages/StoryIndex.jsx'
+import { LoginSignup } from './cmps/LoginSignup.jsx'
+import { UserProfile } from './pages/UserProfile.jsx'
 
 export function RootCmp() {
 
     return (
-        <div>
-            <AppHeader />
-            <main>
+        <div className='app-container'>
+            {/* <AppHeader /> */}
+            <NavBar />
+
+            <main className='contant-container'>
                 <Routes>
-                    {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
-                    <Route path="user/:id" element={<UserProfile />} />
+                    <Route path="/story" element={<StoryIndex />} >
+                        <Route path="/story/:storyId" element={<StoryDetails />} />
+                    </Route>
+                    <Route path="/" element={<StoryIndex />} />
+                    <Route path="/:username" element={<UserProfile />} />
+                    <Route path="login" element={<LoginSignup />} />
                 </Routes>
             </main>
-            <AppFooter />
-        </div>
+            {/* <AppFooter /> */}
+        </div >
     )
 }
 

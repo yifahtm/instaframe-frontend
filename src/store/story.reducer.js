@@ -71,7 +71,6 @@ const initialState = {
     stories: [],
     lastStories: [],
     lastRemovedStory: null,
-    // lables: ['Doll', 'Art', 'Battery Powered', 'Talking', 'Beauty', 'Girls', 'Animal', 'Trip', 'Sport', 'Ride']
 }
 
 export function storyReducer(state = initialState, action) {

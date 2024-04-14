@@ -7,7 +7,7 @@ import { toggleModal } from '../store/system.actions.js'
 import { CreateModal } from './CreateModal.jsx'
 
 export function NavBar() {
-    // const user = useSelector(storeState => storeState.userModule.user)
+    const user = useSelector(storeState => storeState.userModule.loggedInUser)
     const isModalOpen = useSelector(storeState => storeState.systemModule.isModalOpen)
     const [full, setFull] = useState(true)
 

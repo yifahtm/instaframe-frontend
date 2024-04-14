@@ -1,6 +1,6 @@
 import { Formik, Form, Field } from 'formik';
 
-export function MsgForm({ comment, setComment, addStoryComment }) {
+export function TxtInput({ comment, setComment, addStoryComment }) {
     function handleChange({ target }) {
         let { value, name: field, type } = target
         value = (type === 'number') ? +value : value
