@@ -61,7 +61,7 @@ function getEmptyStory() {
     return {
         // _id: "",
         txt: "",
-        imgUrl: 'src/assets/imgs/jeremy-thomas-E0AHdsENmDg-unsplash.jpg',
+        imgUrls: [],
         comments: [],
         likedBy: [],
         by: {
@@ -84,7 +84,7 @@ function _createStories() {
         {
             _id: "s104",
             txt: "Exhibition  curated by @giulioaprin presents a spectrum of aerial photographers that push themselves into finding unusual and different point of view bringing us extraordinary facets of our reality.",
-            imgUrl: ["src/assets/imgs/aldebaran-s-qtRF_RxCAo0-unsplash.jpg"],
+            imgUrls: ["src/assets/imgs/aldebaran-s-qtRF_RxCAo0-unsplash.jpg"],
             by: {
                 _id: "u101",
                 fullname: "Deniska",
@@ -170,7 +170,7 @@ function _createStories() {
         {
             _id: "s111",
             txt: "Let Me See Your Likes!",
-            imgUrl: ["https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"],
+            imgUrls: ["https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"],
             by: {
                 _id: "u101",
                 fullname: "Ulash Ulashi",
@@ -230,7 +230,7 @@ function _createStories() {
         {
             _id: "s123",
             txt: "Best trip ever",
-            imgUrl: ["https://images.pexels.com/photos/1540977/pexels-photo-1540977.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"],
+            imgUrls: ["https://images.pexels.com/photos/1540977/pexels-photo-1540977.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"],
             by: {
                 _id: "u102",
                 fullname: "Bobby bob",
@@ -290,7 +290,7 @@ function _createStories() {
         {
             _id: "s108",
             txt: "Your reaction? 😍",
-            imgUrl: ["src/assets/imgs/uriel-soberanes-oMvtVzcFPlU-unsplash.jpg"],
+            imgUrls: ["src/assets/imgs/uriel-soberanes-oMvtVzcFPlU-unsplash.jpg"],
             by: {
                 _id: "u101",
                 fullname: "Baron Baton",
@@ -350,7 +350,7 @@ function _createStories() {
         {
             _id: "s105",
             txt: "זמן מוגבל | עד גמר המלאי | ההנחה רק על המלאי הקיים | משלוחים, החזרות והחלפה ראשונה חינם בכל קנייה מעל 400₪ | ללא כפל מבצעים",
-            imgUrl: ["https://media.cntraveler.com/photos/6372794f6b04ae53c818dffc/3:4/w_1476,h_1968,c_limit/Tote%20Bags-2022_00-Lede.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT519pWn4flL9yEPn8BZgqpXos2xiTOpa2sQA&usqp=CAU"],
+            imgUrls: ["https://media.cntraveler.com/photos/6372794f6b04ae53c818dffc/3:4/w_1476,h_1968,c_limit/Tote%20Bags-2022_00-Lede.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT519pWn4flL9yEPn8BZgqpXos2xiTOpa2sQA&usqp=CAU"],
             by: {
                 _id: "seller1",
                 fullname: "Lady Shoes & Bags 👠",
@@ -455,7 +455,7 @@ function _createStories() {
         {
             _id: "s106",
             txt: "worldwide shipping",
-            imgUrl: ["https://www.dior.com/couture/var/dior/storage/images/pushs-editos/folder-cruise-23-femme2/folder-prelaunch/m9334utzqm928/38188347-1-eng-GB/m9334utzqm928_1440_1200.png",
+            imgUrls: ["https://www.dior.com/couture/var/dior/storage/images/pushs-editos/folder-cruise-23-femme2/folder-prelaunch/m9334utzqm928/38188347-1-eng-GB/m9334utzqm928_1440_1200.png",
                 "https://cdn.cliqueinc.com/posts/295126/best-dior-bags-295126-1658183714371-main.700x0c.jpg",
                 "https://www.dior.com/couture/var/dior/storage/images/pushs-editos/folder-cruise-23-femme2/m1286zmdwm884/38149056-1-eng-GB/m1286zmdwm884_1440_1200.jpg"],
             by: {
@@ -544,7 +544,7 @@ function _createStories() {
         {
             _id: "s107",
             txt: "",
-            imgUrl: ["https://cdn.cliqueinc.com/posts/281381/most-popular-chanel-bags-281381-1563835000997-main.700x0c.jpg",
+            imgUrls: ["https://cdn.cliqueinc.com/posts/281381/most-popular-chanel-bags-281381-1563835000997-main.700x0c.jpg",
                 "https://kdvr.com/wp-content/uploads/sites/11/2022/06/000_x-best-chanel-handbag-lookalikes-a5fb98.jpg?w=1280",
                 "https://www.telegraph.co.uk/content/dam/luxury/2021/10/21/GettyImages-1044474606_trans_NvBQzQNjv4BqLzLrDmuUc_Tf9Lumyc958K7Dp_leXmjl6IfADRfEYQs.jpg"],
             by: {

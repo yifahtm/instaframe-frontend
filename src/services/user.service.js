@@ -22,8 +22,10 @@ export const userService = {
 window.userService = userService
 
 
-function getUsers() {
-    return storageService.query('user').then(users => users)
+async function getUsers() {
+    const users = await storageService.query(STORAGE_KEY_LOGGEDIN_USER)
+    if (!users || !users.length) _createUsers()
+    return storageService.query(STORAGE_KEY_LOGGEDIN_USER)
     // return httpService.get(`user`)
 }
 
@@ -115,7 +117,7 @@ function getDemoUser() {
         username: "Muko",
         password: "mukmuk",
         fullname: "Muki Muka",
-        imgUrl: "http://some-img",
+        imgUrl: "https://xsgames.co/randomusers/assets/avatars/female/73.jpg",
         following: [
             {
                 _id: "u106",
@@ -140,49 +142,78 @@ function getDemoUser() {
 }
 
 
-
-const user = {
-    username: "Vasya",
-    password: "12345",
-    fullname: "Vasya Vasilivich",
-    imgUrl: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-    bio: 'Traveling and sharing my life! Folow me to see more!',
-    following: [
+function _createUsers() {
+    const user = [
         {
-            _id: "u106",
-            fullname: "Dob",
-            imgUrl: "http://some-img"
+            _id: "u101",
+            username: "Muko",
+            password: "mukmuk",
+            fullname: "Muki Muka",
+            imgUrl: "https://xsgames.co/randomusers/assets/avatars/female/73.jpg",
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u105",
+                    fullname: "Bob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
         },
         {
-            _id: "u100",
-            fullname: "Rob",
-            imgUrl: "http://some-img"
+            username: "Vasya",
+            password: "12345",
+            fullname: "Vasya Vasilivich",
+            imgUrl: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
         }
-    ],
-    followers: [
-        {
-            _id: "u115",
-            fullname: "Mob",
-            imgUrl: "http://some-img"
-        },
-        {
-            _id: "u125",
-            fullname: "Gob",
-            imgUrl: "http://some-img"
-        },
-        {
-            _id: "u135",
-            fullname: "Fob",
-            imgUrl: "http://some-img"
-        }
-    ],
-    savedStoryIds: [
-        "s104",
-        "s111",
-        "s123"
     ]
+    storageService._save(STORAGE_KEY_LOGGEDIN_USER, user)
 }
-
 
 // ;(async ()=>{
 //     await userService.signup({fullname: 'Puki Norma', username: 'puki', password:'123',score: 10000, isAdmin: false})

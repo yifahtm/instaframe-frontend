@@ -92,7 +92,7 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes })
         setComment({ txt: '' })
     }
 
-    const { imgUrl, txt, likedBy, comments } = story
+    const { imgUrls, txt, likedBy, comments } = story
     return (
         <section className="story-preview">
             <section className="story-header">
@@ -114,7 +114,7 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes })
                     />}
                 </button>
             </section>
-            <img className="story-img" src={imgUrl} alt="story"></img>
+            <img className="story-img" src={imgUrls[0]} alt="story"></img>
             <section className="story-footer">
                 <div>
                     <Actions
