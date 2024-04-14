@@ -31,7 +31,7 @@ import { useState, useEffect } from 'react'
 
 import { removeStoryOptimistic } from "../store/story.actions.js";
 
-import { ActionList } from "./ActionList.jsx";
+import { ActionListModal } from "./ActionListModal.jsx";
 import { Actions } from "./Actions.jsx";
 import { LikesModal } from "./LikesModal.jsx";
 import { TxtInput } from "./TxtInput.jsx";
@@ -106,9 +106,11 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes })
                 </div>
                 <button onClick={() => setIsListOpen(!isListOpen)}
                 ><i className="fa-solid fa-ellipsis"></i> {isListOpen &&
-                    <ActionList
+                    <ActionListModal
                         onRemoveStory={onRemoveStory}
                         story={story}
+                        isListOpen={isListOpen}
+                        setIsListOpen={setIsListOpen}
                     />}
                 </button>
             </section>

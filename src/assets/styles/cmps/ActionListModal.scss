@@ -1,0 +1,40 @@
+.action-list-modal {
+    padding-top: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* padding-top: 50px; */
+    width: 100vw;
+    height: 100vh;
+    z-index: 15;
+    background-color: rgba(0, 0, 0, 0.645);
+}
+
+.action-list {
+    // position: absolute;
+    background-color: #fff;
+    z-index: 10;
+    margin: auto;
+    margin-top: 9vh;
+    padding-left: 0;
+    padding-right: 0;
+    width: 25.1rem;
+    height: fit-content;
+    border-radius: 10px;
+
+    & li:not(:last-of-type) {
+        border-bottom: 1px solid lightgrey;
+    }
+
+    .btn {
+        height: 2.3rem;
+        padding-bottom: 10px;
+        padding-left: 4px;
+        padding-right: 0;
+
+        &.delete {
+            color: $clr1;
+            font-weight: bold;
+        }
+    }
+}
