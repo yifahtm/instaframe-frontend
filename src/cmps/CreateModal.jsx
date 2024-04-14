@@ -6,6 +6,7 @@ import { ImgUploader } from "./ImgUploader.jsx"
 
 import { storyService } from "../services/story.service.local.js"
 import { toggleModal } from "../store/system.actions.js"
+import { addStory } from "../store/story.actions.js"
 
 export function CreateModal() {
     const [createStory, setCreateStory] = useState(storyService.getEmptyStory())
@@ -18,7 +19,8 @@ export function CreateModal() {
     }
 
     function onUploadSuccess(imgUrl) {
-        setCreateStory(prevState => ({ ...prevState, imgUrl: [...prevState.imgUrl, imgUrl] }))
+        console.log("🚀 ~ onUploadSuccess ~ imgUrl:", imgUrl)
+        setCreateStory(prevState => ({ ...prevState, imgUrls: [...prevState.imgUrls, imgUrl] }))
     }
 
     function handleChange({ target }) {
@@ -28,15 +30,14 @@ export function CreateModal() {
 
     function onSaveStory(ev) {
         ev.preventDefault()
-        console.log(createStory.imgUrl)
-        if (!createStory.imgUrl.length) {
-            console.log('dfghjk')
+        console.log("🚀 ~ onSaveStory ~ createStory:", createStory)
+        if (!createStory.imgUrls.length) {
+            console.log('no ages')
             return
         }
-        storyService.save(createStory).then(() => {
-            alert('story added')
+        addStory(createStory).then(() => {
             toggleModal()
-            window.location.reload(false)
+            // window.location.reload(false)
         })
     }
 
@@ -55,7 +56,7 @@ export function CreateModal() {
                 </header>
                 <div className='create-story-container'>
                     <section className='img-section'>
-                        {createStory.imgUrl.length ? <img src={createStory.imgUrl} /> :
+                        {createStory.imgUrls.length ? <img src={createStory.imgUrls} /> :
                             <ImgUploader onUploadSuccess={onUploadSuccess} />}
                     </section>
                     <section className='story-info'>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { uploadService } from '../services/upload.service'
 
-export function ImgUploader({ onUploaded = null }) {
+export function ImgUploader({ onUploaded = null, onUploadSuccess }) {
   const [imgData, setImgData] = useState({
     imgUrl: null,
     height: 500,
@@ -14,7 +14,8 @@ export function ImgUploader({ onUploaded = null }) {
     const { secure_url, height, width } = await uploadService.uploadImg(ev)
     setImgData({ imgUrl: secure_url, width, height })
     setIsUploading(false)
-    onUploaded && onUploaded(secure_url)
+    onUploadSuccess(secure_url)
+    // onUploaded && onUploaded(secure_url)
   }
 
   function getUploadLabel() {
