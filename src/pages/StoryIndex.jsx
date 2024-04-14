@@ -3,9 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Fragment, useEffect, useState } from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 
-
-import { Shorts } from '../cmps/Shorts.jsx'
-
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 
 import {
@@ -16,6 +13,8 @@ import {
 import { loadUsers } from '../store/user.actions';
 
 import { StoryList } from '../cmps/StoryList.jsx'
+import { Shorts } from '../cmps/Shorts.jsx'
+import { Suggestions } from '../cmps/Suggestions.jsx';
 import { LoginSignup } from '../cmps/LoginSignup.jsx';
 import { LikesModal } from '../cmps/LikesModal.jsx';
 // import { StoryFilter } from '../cmps/StoryFilter.jsx'
@@ -69,11 +68,14 @@ export function StoryIndex() {
                     {/* </section> */}
 
                     {!isLoading && (
-                        <StoryList stories={stories}
-                            user={user}
-                            onRemoveStory={onRemoveStory}
-                            likesIsOpen={likesIsOpen}
-                            likes={likes} />
+                        <>
+                            <StoryList stories={stories}
+                                user={user}
+                                onRemoveStory={onRemoveStory}
+                                likesIsOpen={likesIsOpen}
+                                likes={likes} />
+                            <Suggestions user={user} />
+                        </>
                     )}
                     {isLoading && <div>Loading...</div>}
                 </main>
