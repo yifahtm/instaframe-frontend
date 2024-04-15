@@ -29,8 +29,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from 'react'
 
-import { removeStoryOptimistic } from "../store/story.actions.js";
-
 import { ActionListModal } from "./ActionListModal.jsx";
 import { Actions } from "./Actions.jsx";
 import { LikesModal } from "./LikesModal.jsx";

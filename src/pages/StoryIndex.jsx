@@ -61,12 +61,6 @@ export function StoryIndex() {
             </div>
             <div className="story-container">
                 <main className="main-container">
-                    {/* <section className="filter-container"> */}
-
-                    {/* } */}
-                    {/* <StoryFilter filterBy={filterBy} onSetFilter={onSetFilter} /> */}
-                    {/* </section> */}
-
                     {!isLoading && (
                         <>
                             <StoryList stories={stories}
