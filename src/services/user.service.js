@@ -3,6 +3,7 @@ import { httpService } from './http.service'
 import { socketService } from './socket.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
+const STORAGE_KEY_USERS = 'users'
 
 export const userService = {
     login,
@@ -23,16 +24,16 @@ window.userService = userService
 
 
 async function getUsers() {
-    const users = await storageService.query(STORAGE_KEY_LOGGEDIN_USER)
+    const users = await storageService.query(STORAGE_KEY_USERS)
     if (!users || !users.length) _createUsers()
-    return storageService.query(STORAGE_KEY_LOGGEDIN_USER)
+    return storageService.query(STORAGE_KEY_USERS)
     // return httpService.get(`user`)
 }
 
 
 
 async function getById(userId) {
-    const user = await storageService.get('user', userId)
+    const user = await storageService.get('users', userId)
     // const user = await httpService.get(`user/${userId}`)
     return user
 }
@@ -212,7 +213,7 @@ function _createUsers() {
             ]
         }
     ]
-    storageService._save(STORAGE_KEY_LOGGEDIN_USER, user)
+    storageService._save(STORAGE_KEY_USERS, user)
 }
 
 // ;(async ()=>{

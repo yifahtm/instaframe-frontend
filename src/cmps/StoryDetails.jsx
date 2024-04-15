@@ -21,11 +21,12 @@ export function StoryDetails() {
     const [isListOpen, setIsListOpen] = useState(false)
 
     const user = useSelector((storeState) => storeState.userModule.loggedinUser)
-    const stories = useSelector((storeState) => storeState.storyModule.stories)
     const params = useParams()
+
+
     const navigate = useNavigate()
 
-    // console.log(story, story.comments)
+
 
 
     useEffect(() => {
@@ -48,6 +49,7 @@ export function StoryDetails() {
             })
     }
 
+
     function goToProfile(username) {
         navigate(`/${username}`)
     }
@@ -69,6 +71,16 @@ export function StoryDetails() {
         setStory(prevStory => {
             return { ...prevStory, comments: story.comments }
         })
+    }
+
+    async function onRemoveStory(story) {
+        try {
+            await removeStoryOptimistic(story._id)
+            showSuccessMsg('Story removed')
+        } catch (err) {
+            console.log('Cannot remove story', err)
+            showErrorMsg('Cannot remove story')
+        }
     }
 
     function checkLike() {
@@ -117,47 +129,83 @@ export function StoryDetails() {
 
     if (!story) return <div className="loading-page"><span className="loading"></span></div>
     return <div className="story-details">
+
         <div className="app">
-            <div className="app">
-
-
-                <div className="picker-container">
-                    {showPicker && <EmojiPicker
-                        pickerStyle={{ width: '100%' }}
-                        onEmojiClick={onEmojiClick} />}
-                </div>
+            <div className="picker-container">
+                {showPicker && <EmojiPicker
+                    pickerStyle={{ width: '100%' }}
+                    onEmojiClick={onEmojiClick} />}
             </div>
         </div>
+
         <section className="story-container">
-            <div className="story-list">
-                {stories.map((story) => (
+            <div className="image">
+                {story.imgUrls.length > 1 ?
+                    <Slider className="slick-slider" dots={true} infinite={false}>
+                        {story.imgUrls.map(img => <img key={story.imgUrl} className="story-img" src={img} />)}
+                    </Slider>
+                    : <img className="story-img" src={story.imgUrls[0]} />}
+            </div>
 
 
-                    <div className="details-comment">
+            <div className="details-comment">
+                <div>
+                    <section className="details-header">
                         <div>
-                            <section className="details-header">
+                            <img className="prew-user-img" src={story.by.imgUrl} />
+                            <a className="details-username"
+                            // onClick={() => goToProfile(story.by.username)}
+                            >
+                                {story.by.username}
+                            </a>
+                        </div>
+                        <button onClick={onClose}><i className="fa-solid fa-x"></i></button>
+                    </section>
+                    <section className="comments-container">
+                        <div className="comments-list">
+                            <section className="comment">
+                                <img className="prew-user-img" src={story.by.imgUrl}
+                                // onClick={() => goToProfile(story.by.username)}
+                                />
                                 <div>
-                                    <img className="prew-user-img" src={story.by.imgUrl} />
-                                    <a className="details-username"
-                                    // onClick={() => goToProfile(story.by.username)}
-                                    >{story.by.username} </a>
-                                </div>
-                                <button onClick={onClose}><i className="fa-solid fa-x"></i></button>
-                            </section>
-                            <section className="comments-container">
-                                <div className="comments-list">
-                                    <section className="comment">
-                                        <img className="prew-user-img" src={story.by.imgUrl}
+                                    <section>
+                                        <span className="details-username"
+
                                         // onClick={() => goToProfile(story.by.username)}
+
+                                        >
+                                            {story.by.username}
+                                        </span>
+                                        <span className="story-text">&nbsp;{story.txt}</span>
+                                    </section>
+                                    {/* <section className="comment-footer">
+                                                <span className="time">1h</span>
+                                                <button onClick={() => setIsListOpen(!isListOpen)}
+                                                ><i className="fa-solid fa-ellipsis"></i> {isListOpen &&
+                                                    <ActionListModal
+                                                        onRemoveStory={onRemoveStory}
+                                                        story={story}
+                                                    />}
+                                                </button>
+                                            </section> */}
+                                </div>
+                            </section>
+                            {story.comments && story.comments.length ?
+                                <Fragment>
+                                    {story.comments.map(comment => <section className="comment" key={comment.id}>
+                                        <img className="prew-user-img" src={comment.by.imgUrl}
+
+                                        // onClick={() => goToProfile(comment.by.username)}
+
                                         />
                                         <div>
                                             <section>
                                                 <span className="details-username"
-
-                                                // onClick={() => goToProfile(story.by.username)}
-
-                                                >{story.by.username}</span>
-                                                <span className="story-text">&nbsp;{story.txt}</span>
+                                                //  onClick={() => goToProfile(comment.by.username)}
+                                                >
+                                                    {comment.by.username}
+                                                </span>
+                                                <span className="story-text">&nbsp;{comment.txt}</span>
                                             </section>
                                             <section className="comment-footer">
                                                 <span className="time">1h</span>
@@ -170,62 +218,33 @@ export function StoryDetails() {
                                                 </button>
                                             </section>
                                         </div>
-                                    </section>
-                                    {story.comments && story.comments.length ?
-                                        <Fragment>
-                                            {story.comments.map(comment => <section className="comment" key={comment.id}>
-                                                {/* <img className="prew-user-img" src={comment.by.imgUrl}
-
-                                                // onClick={() => goToProfile(comment.by.username)}
-
-                                                /> */}
-                                                <div>
-                                                    <section>
-                                                        <span className="details-username"
-                                                        //  onClick={() => goToProfile(comment.by.username)}
-                                                        >
-                                                            {/* {comment.by.username} */}
-                                                        </span>
-                                                        <span className="story-text">&nbsp;{comment.txt}</span>
-                                                    </section>
-                                                    <section className="comment-footer">
-                                                        <span className="time">1h</span>
-                                                        <button onClick={() => setIsListOpen(!isListOpen)}
-                                                        ><i className="fa-solid fa-ellipsis"></i> {isListOpen &&
-                                                            <ActionListModal
-                                                                onRemoveStory={onRemoveStory}
-                                                                story={story}
-                                                            />}
-                                                        </button>
-                                                    </section>
-                                                </div>
-                                            </section>)}
-                                        </Fragment> : null}
-                                </div>
-                                <div className="footer-container">
-                                    <Actions
-                                        story={story}
-                                        toggleLike={toggleLike}
-                                        checkLike={checkLike}
-                                        checkSave={checkSave} toggleSave={toggleSave} />
-                                    <div className="likes-time">
-                                        <a>{story.likedBy.length} likes</a>
-                                        <span>1 HOUR AGO</span>
-                                    </div>
-                                </div>
-                            </section>
+                                    </section>)}
+                                </Fragment> : null}
                         </div>
-                        <div className="input-section">
-                            <EmojiPicker height={200} width={200} />
-                            <span onClick={() => setShowPicker(val => !val)}><i className="fa-regular fa-face-smile"></i></span>
-                            <TxtInput comment={comment} setComment={setComment} addStoryComment={addStoryComment} />
-                            <a className={comment.txt ? 'activated' : 'none'} onClick={addStoryComment}>Post</a>
+                        <div className="footer-container">
+                            <Actions
+                                story={story}
+                                toggleLike={toggleLike}
+                                checkLike={checkLike}
+                                checkSave={checkSave} toggleSave={toggleSave} />
+                            <div className="likes-time">
+                                <a>{story.likedBy.length} likes</a>
+                                <span>1 HOUR AGO</span>
+                            </div>
                         </div>
-                    </div>
-                ))}
-
-
+                    </section>
+                </div>
+                <div className="input-section">
+                    <EmojiPicker height={200} width={200} />
+                    <span onClick={() => setShowPicker(val => !val)}><i className="fa-regular fa-face-smile"></i></span>
+                    <TxtInput comment={comment} setComment={setComment} addStoryComment={addStoryComment} />
+                    <a className={comment.txt ? 'activated' : 'none'} onClick={addStoryComment}>Post</a>
+                </div>
             </div>
+            {/* ))} */}
+
+
+            {/* </div> */}
         </section>
 
     </div>

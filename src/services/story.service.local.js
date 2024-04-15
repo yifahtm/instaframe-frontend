@@ -170,7 +170,7 @@ function _createStories() {
         {
             _id: "s111",
             txt: "Let Me See Your Likes!",
-            imgUrls: ["https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500", "https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"],
+            imgUrls: ["https://images.pexels.com/photos/3314294/pexels-photo-3314294.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"],
             by: {
                 _id: "u101",
                 fullname: "Ulash Ulashi",

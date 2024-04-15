@@ -47,7 +47,7 @@ export function CreateModal() {
 
     return (
         <div className='create-modal' onClick={toggleModal}>
-            <button><i class="fa-solid fa-xmark btn-close"></i></button>
+            <button><i className="fa-solid fa-xmark btn-close"></i></button>
             <div className='create-story' onClick={onModal}>
                 <header>
                     <a onClick={toggleModal}><i className="fa-solid fa-arrow-left"></i></a>
