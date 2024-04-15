@@ -65,6 +65,7 @@ export const REMOVE_USER = 'REMOVE_USER'
 
 const initialState = {
     loggedinUser: userService.getDemoUser(),
+    watchedUser: userService.getDemoUser(),
     users: [],
 }
 

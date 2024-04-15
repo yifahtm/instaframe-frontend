@@ -292,9 +292,9 @@ function _createStories() {
             txt: "Your reaction? 😍",
             imgUrls: ["src/assets/imgs/uriel-soberanes-oMvtVzcFPlU-unsplash.jpg"],
             by: {
-                _id: "u101",
-                fullname: "Baron Baton",
-                username: "bar_bat_001",
+                _id: "u102",
+                fullname: "Muki Muka",
+                username: "Muko",
                 imgUrl: "https://i.pinimg.com/236x/e9/a5/16/e9a516010926848acc79e80d1670b3ee.jpg"
             },
             comments: [

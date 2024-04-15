@@ -146,7 +146,7 @@ function getDemoUser() {
 function _createUsers() {
     const user = [
         {
-            _id: "u101",
+            _id: "u102",
             username: "Muko",
             password: "mukmuk",
             fullname: "Muki Muka",
@@ -165,13 +165,10 @@ function _createUsers() {
                     imgUrl: "http://some-img"
                 }
             ],
-            savedStoryIds: [
-                "s104",
-                "s111",
-                "s123"
-            ]
+            savedStoryIds: []
         },
         {
+            _id: "u101",
             username: "Vasya",
             password: "12345",
             fullname: "Vasya Vasilivich",

@@ -7,9 +7,11 @@ import { toggleModal } from '../store/system.actions.js'
 import { CreateModal } from './CreateModal.jsx'
 
 export function NavBar() {
-    const user = useSelector(storeState => storeState.userModule.loggedInUser)
+    const user = useSelector(storeState => storeState.userModule.watchedUser)
     const isModalOpen = useSelector(storeState => storeState.systemModule.isModalOpen)
     const [full, setFull] = useState(true)
+
+    console.log(user)
 
     // async function onLogout() {
     //     try {
@@ -46,7 +48,7 @@ export function NavBar() {
                     <a onClick={toggleModal} className='nav-btn create mobile'><span className='nav-icon'><i className="fa-regular fa-square-plus"></i></span><span className='nav-name' >Create</span></a>
                     {isModalOpen && <CreateModal />}
                     <NavLink className='nav-btn profile'
-                    // to={user.username}
+                        to={user._id}
                     >
                         <span className='nav-icon'>
                             <img src='https://xsgames.co/randomusers/assets/avatars/female/73.jpg' />
