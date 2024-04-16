@@ -7,9 +7,11 @@ import { ImgUploader } from "./ImgUploader.jsx"
 import { storyService } from "../services/story.service.local.js"
 import { toggleModal } from "../store/system.actions.js"
 import { addStory } from "../store/story.actions.js"
+import { TxtInput } from "./TxtInput.jsx"
 
 export function CreateModal() {
     const [createStory, setCreateStory] = useState(storyService.getEmptyStory())
+    const user = useSelector((storeState) => storeState.userModule.loggedinUser)
 
     const fileTypes = ["JPEG", "PNG", "GIF"]
 
@@ -41,6 +43,10 @@ export function CreateModal() {
         })
     }
 
+    function goToProfile() {
+        navigate('/:id')
+    }
+
     function onModal(ev) {
         ev.stopPropagation()
     }
@@ -61,13 +67,49 @@ export function CreateModal() {
                     </section>
                     <section className='story-info'>
                         <form onSubmit={onSaveStory}>
-                            <label htmlFor="text"></label>
-                            <textarea type="text"
-                                name="txt"
-                                id="txt"
-                                placeholder="Write a caption..."
-                                value={createStory.txt}
-                                onChange={handleChange} />
+                            <div className='suggestion-user-info'>
+                                <img className='suggestion-photo' src={user.imgUrl}
+                                // onClick={goToProfile} 
+                                />
+                                <div className='suggestion-user-name'>
+                                    <a
+                                    // onClick={goToProfile}
+                                    >{user.username}</a>
+                                </div>
+                            </div>
+                            <div className="text-area">
+                                <label htmlFor="text"></label>
+
+                                <textarea type="text"
+                                    name="txt"
+                                    id="txt"
+                                    placeholder="Write a caption..."
+                                    value={createStory.txt}
+                                    onChange={handleChange}
+                                />
+                                <i class="fa-regular fa-face-smile"></i>
+                            </div>
+                            <div className="btns-extra">
+                                <div className='input-container other location flex space-between' >
+                                    <input className='other location' type="text" placeholder="Add location"></input>
+                                    <span className="icon material-symbols-outlined">
+                                        location_on
+                                    </span>
+                                </div>
+                                <div className='input-container other accessability flex space-between' >
+                                    {/* <label htmlFor="accessability" className='other accessability' ></label> */}
+                                    <input id="accessability"
+                                        // style={{ visibility: "hidden" }}
+
+                                        className='other accessability' type="text" placeholder="Accessability"></input><i className=" icon fa-solid fa-chevron-down"></i>
+                                </div>
+                                <div className='input-container other advanced flex space-between'>
+                                    {/* <label htmlFor="advanced" className='other advanced' ></label> */}
+                                    <input id="advanced" className='other advanced'
+                                        // style={{ visibility: "hidden" }} 
+                                        type="text" placeholder="Advanced settings"></input><i className="icon fa-solid fa-chevron-down"></i>
+                                </div>
+                            </div>
                         </form>
                     </section>
                 </div>

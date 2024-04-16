@@ -1,0 +1,26 @@
+.upload-preview {
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    width: 30%;
+    justify-self: center;
+    align-self: center;
+
+    .upload-img {
+        font-size: 20px;
+        margin-left: -15px
+    }
+
+    .input-file {
+        color: #ffff;
+        background-color: #0095f6;
+        width: fit-content;
+        font-size: 14px;
+        font-weight: 620;
+        border-radius: 8px;
+        margin-top: 12px;
+        margin-left: -25px;
+        padding: 6px;
+        cursor: pointer
+    }
+}
