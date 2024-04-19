@@ -11,6 +11,14 @@
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.645);
 
+    .btn-close {
+        position: absolute;
+        right: 14px;
+        top: 6px;
+        color: $clr6;
+        font-size: 19px;
+    }
+
     .picker-container {
         position: absolute;
         top: 200px;
@@ -18,7 +26,7 @@
     }
 
     .EmojiPickerReact {
-
+        // display: none;
         width: 300px;
         // margin-left: 30vw;
     }
@@ -43,7 +51,7 @@
 
 .story-container {
     display: flex;
-    max-width: 1000px;
+    // max-width: 1000px;
 
     .image {
 
@@ -52,210 +60,228 @@
         // object-fit: cover;
 
         img {
-            width: 500px;
-            height: 650px;
+            width: 700px;
+            height: 870px;
             object-fit: cover;
+            margin-left: -200px;
         }
     }
 
-    .slick-slider {
+    // .slick-slider {
 
 
-        .slick-prev {
-            z-index: 10;
-            left: 10px;
-            opacity: 0.4;
+    //     .slick-prev {
+    //         z-index: 10;
+    //         left: 10px;
+    //         opacity: 0.4;
 
-        }
+    //     }
 
-        .slick-next {
-            z-index: 10;
-            right: 10px;
-            opacity: 0.4;
+    //     .slick-next {
+    //         z-index: 10;
+    //         right: 10px;
+    //         opacity: 0.4;
 
-        }
+    //     }
 
-        .slick-dots {
-            bottom: 10px;
-        }
+    //     .slick-dots {
+    //         bottom: 10px;
+    //     }
 
-        .slick-dots li button:before {
-            color: white;
-        }
+    //     .slick-dots li button:before {
+    //         color: white;
+    //     }
 
-        .slick-list {
-            margin-bottom: -5px;
-        }
+    //     .slick-list {
+    //         margin-bottom: -5px;
+    //     }
 
-        .slick-dots li {
-            margin: 0;
-        }
-    }
+    //     .slick-dots li {
+    //         margin: 0;
+    //     }
+    // }
 
-}
 
-.details-comment {
-    background-color: #ffffff;
-    width: 500px;
-    height: 650px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    font-size: 14px;
 
-    img {
-        width: 35px;
-        height: 35px;
-        object-fit: cover;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-
-    .details-username {
-        text-decoration: none;
-        color: black;
-        font-weight: 600;
+    .details-comment {
+        background-color: #ffffff;
+        width: 500px;
+        height: 870px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
         font-size: 14px;
-        cursor: pointer;
-    }
 
-    .details-header {
-        display: flex;
-        justify-content: space-between;
-        height: 60px;
-        padding: 14px;
-        border-bottom: 1px solid rgb(219, 219, 219);
-
-        div {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        button {
-            border: none;
+        img {
+            width: 35px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 50%;
             cursor: pointer;
-            background-color: rgba(255, 255, 255, 0);
         }
-    }
-}
 
-.comments-container {
+        .details-username {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+        }
 
-    display: grid;
-    grid-template-rows: 428px 110px;
-
-
-
-    .comments-list {
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        gap: 34px;
-        overflow: auto;
-        // border-bottom: 1px solid rgb(219, 219, 219);
-    }
-
-    .comment {
-        display: grid;
-        grid-template-columns: 50px 1fr;
-
-        .comment-footer {
+        .details-header {
             display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+            justify-content: space-between;
+            height: 60px;
+            padding: 14px;
+            border-bottom: 1px solid rgb(219, 219, 219);
 
-        .time {
-            font-size: 12px;
-            color: #a3a3a3;
-        }
-    }
+            div {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
 
-    .footer-container {
-
-
-        .btn-container {
-            border-top: 1px solid rgb(219, 219, 219);
-            display: flex;
-            padding: 6px 16px;
-            gap: 15px;
-
-            a {
-                font-size: 24px;
+            button {
+                border: none;
                 cursor: pointer;
-                color: black;
-            }
-
-            .fa-solid.fa-heart {
-                color: #ed4956;
-            }
-
-            .saved-btn {
-                margin-left: auto;
+                background-color: rgba(255, 255, 255, 0);
             }
         }
+    }
 
-        .likes-time {
-            padding: 5px 15px;
+    .comments-container {
+
+        display: grid;
+        grid-template-rows: 428px 110px;
+
+
+
+        .comments-list {
+            padding: 15px;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 34px;
+            overflow: auto;
+            // border-bottom: 1px solid rgb(219, 219, 219);
+        }
 
-            a {
-                font-weight: 600;
-                cursor: pointer;
-                font-size: 14px;
+        .comment {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+
+            .comment-footer {
+                display: flex;
+                align-items: center;
+                gap: 5px;
             }
 
-            span {
-                font-size: 10px;
-                color: #8e8e8e;
+            .time {
+                font-size: 12px;
+                color: #a3a3a3;
             }
         }
-    }
 
+        .footer-container {
+            margin-top: 233px;
 
+            .btn-container {
+                border-top: 1px solid rgb(219, 219, 219);
+                display: flex;
+                margin: -10px 0 0 15px;
+                gap: 15px;
 
-}
+                width: 95%;
 
-.input-section {
-    border-top: 1px solid rgb(219, 219, 219);
-    padding: 0 8px;
-    height: 52px;
-    width: 100%;
-    display: flex;
-    // grid-template-columns: 40px 1fr 40px;
-    align-items: center;
+                a {
+                    font-size: 24px;
+                    cursor: pointer;
+                    color: black;
+                }
 
-    span {
-        font-size: 24px;
-        cursor: pointer;
-        color: black;
-        margin: auto;
+                .fa-solid.fa-heart {
+                    color: #ed4956;
+                }
 
-    }
+                .saved-btn {
+                    margin-left: auto;
+                }
+            }
 
-    .msg-input {
-        border: none;
-        width: 95%;
+            .likes-time {
+                padding: 5px 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
 
-        &:focus {
-            outline: none;
-            background-color: rgba(255, 255, 255, 0);
+                a {
+                    font-weight: 600;
+                    cursor: pointer;
+                    font-size: 14px;
+                }
+
+                span {
+                    font-size: 10px;
+                    color: #8e8e8e;
+                }
+            }
         }
+
+
+
     }
 
-    a {
-        font-weight: 600;
-        color: #b5dbff;
-    }
+    .input-section {
+        position: relative;
+        border-top: 1px solid rgb(219, 219, 219);
+        padding: 0 8px;
+        margin-top: 221px;
+        height: 52px;
+        width: 500px;
+        display: flex;
+        // grid-template-columns: 40px 1fr 40px;
+        align-items: center;
 
-    .activated {
-        cursor: pointer;
-        color: #0084ff;
+        span {
+            font-size: 24px;
+            cursor: pointer;
+            color: black;
+            margin: auto;
 
-        &:hover {
-            color: #00488a;
+        }
+
+        .fa-face-smile {
+            // position: absolute;
+            // bottom: 0;
+            // left: 0;
+            font-size: 22px;
+            margin-left: 10px;
+            margin-right: 16px;
+        }
+
+        .msg-input {
+            border: none;
+            width: 95%;
+
+            &:focus {
+                outline: none;
+                background-color: rgba(255, 255, 255, 0);
+            }
+        }
+
+        a {
+            position: absolute;
+            right: 3.2%;
+            top: 26.5%;
+            font-weight: 600;
+            color: #b5dbff;
+        }
+
+        .activated {
+            cursor: pointer;
+            color: #0084ff;
+
+            &:hover {
+                color: #00488a;
+            }
         }
     }
 }

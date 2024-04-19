@@ -1,6 +1,7 @@
 .story-preview {
     display: flex;
     flex-direction: column;
+    max-width: 468px;
     // gap: 15px;
     // margin-top: 15px;
     border-bottom: 0.01px solid #c2c2c2;
@@ -52,17 +53,17 @@
             }
         }
 
-        svg {
-            color: #c2c2c2;
-            fill: #c2c2c2;
-            cursor: pointer;
-            font-size: 16px;
+        // svg {
+        //     color: #c2c2c2;
+        //     fill: #c2c2c2;
+        //     cursor: pointer;
+        //     font-size: 16px;
 
-            &:hover {
-                color: $clr7;
-                fill: $clr7;
-            }
-        }
+        //     &:hover {
+        //         color: $clr7;
+        //         fill: $clr7;
+        //     }
+        // }
     }
 
     .time {
@@ -116,43 +117,6 @@
             object-fit: cover;
         }
 
-    }
-
-    .btn-container {
-        display: flex;
-        gap: 15px;
-        position: relative;
-
-        a {
-            font-size: 24px;
-            padding: 15px 1px 0px;
-            cursor: pointer;
-            color: black;
-
-            &:hover {
-                color: #8e8e8e;
-                background-color: #fafafa;
-
-
-            }
-
-            .fa-solid.fa-heart {
-                color: #ed4956;
-            }
-
-            .fa-paper-plane {
-                transform: rotate(30deg);
-                margin-top: -3px;
-                margin-left: -6px;
-                font-size: 20px;
-            }
-        }
-
-        .saved-btn {
-            position: absolute;
-            right: 5px;
-            font-size: 23px
-        }
     }
 
     // .link {

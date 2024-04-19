@@ -140,11 +140,13 @@ export function StoryDetails() {
 
         <section className="story-container">
             <div className="image">
-                {story.imgUrls.length > 1 ?
-                    <Slider className="slick-slider" dots={true} infinite={false}>
-                        {story.imgUrls.map(img => <img key={story.imgUrl} className="story-img" src={img} />)}
-                    </Slider>
-                    : <img className="story-img" src={story.imgUrls[0]} />}
+                {/* {story.imgUrls.length > 1 ?
+                    // <Slider className="slick-slider" dots={true} infinite={false}>
+                    story.imgUrls.map(img => <img key={story.imgUrls} className="story-img" src={img} />)
+                    // </Slider>
+                    :  */}
+                <img className="story-img" src={story.imgUrls[0]} />
+                {/* } */}
             </div>
 
 
@@ -159,7 +161,16 @@ export function StoryDetails() {
                                 {story.by.username}
                             </a>
                         </div>
-                        <button onClick={onClose}><i className="fa-solid fa-x"></i></button>
+                        <button onClick={() => setIsListOpen(!isListOpen)}
+                        ><i className="fa-solid fa-ellipsis"></i> {isListOpen &&
+                            <ActionListModal
+                                onRemoveStory={onRemoveStory}
+                                story={story}
+                                isListOpen={isListOpen}
+                                setIsListOpen={setIsListOpen}
+                            />}
+                        </button>
+                        <button className="btn-close" onClick={onClose}><i className="fa-solid fa-x"></i></button>
                     </section>
                     <section className="comments-container">
                         <div className="comments-list">
@@ -193,7 +204,7 @@ export function StoryDetails() {
                             {story.comments && story.comments.length ?
                                 <Fragment>
                                     {story.comments.map(comment => <section className="comment" key={comment.id}>
-                                        <img className="prew-user-img" src={comment.by.imgUrl}
+                                        <img className="prew-user-img" src={comment.by?.imgUrl}
 
                                         // onClick={() => goToProfile(comment.by.username)}
 
@@ -203,7 +214,7 @@ export function StoryDetails() {
                                                 <span className="details-username"
                                                 //  onClick={() => goToProfile(comment.by.username)}
                                                 >
-                                                    {comment.by.username}
+                                                    {comment.by?.username}
                                                 </span>
                                                 <span className="story-text">&nbsp;{comment.txt}</span>
                                             </section>
@@ -234,11 +245,14 @@ export function StoryDetails() {
                         </div>
                     </section>
                 </div>
-                <div className="input-section">
-                    <EmojiPicker height={200} width={200} />
-                    <span onClick={() => setShowPicker(val => !val)}><i className="fa-regular fa-face-smile"></i></span>
+                <div className="input-section flex space-between">
+                    {/* <EmojiPicker height={200} width={200} />
+                    <span onClick={() => setShowPicker(val => !val)}><i className="fa-regular fa-face-smile"></i></span> */}
+                    <i className="fa-regular fa-face-smile"></i>
+
                     <TxtInput comment={comment} setComment={setComment} addStoryComment={addStoryComment} />
                     <a className={comment.txt ? 'activated' : 'none'} onClick={addStoryComment}>Post</a>
+
                 </div>
             </div>
             {/* ))} */}

@@ -68,7 +68,8 @@ export function StoryIndex() {
                                 onRemoveStory={onRemoveStory}
                                 likesIsOpen={likesIsOpen}
                                 likes={likes} />
-                            <Suggestions user={user} />
+                            <Suggestions user={user}
+                                goToProfile={goToProfile} />
                         </>
                     )}
                     {isLoading && <div>Loading...</div>}

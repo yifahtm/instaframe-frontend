@@ -97,7 +97,13 @@ export function UserProfile() {
   return <div className="profile-page contant-container main-container">
     <div className="profile-container">
       <section className="profile-header">
-        <section className="profile-photo"><img src={userProfile.imgUrl} /></section>
+        <section className="profile-photo">
+          <img src={userProfile.imgUrl} />
+          <div className='highlights flex column space-between justify-center'>
+            <button className='btn-highlights' id=' btn-highlights'><i class="fa-solid fa-plus"></i></button>
+            <label htmlFor='btn-highlights'>New</label>
+          </div>
+        </section>
         <section className="profile-info">
           {loggedInUser ?
             <div className="profile-info-header">
@@ -105,7 +111,7 @@ export function UserProfile() {
               <button>Edit profile</button>
               <button>View archive</button>
               <a>
-                <svg aria-label="Options" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Options</title><circle cx="12" cy="12" fill="none" r="8.635" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle><path d="M14.232 3.656a1.269 1.269 0 0 1-.796-.66L12.93 2h-1.86l-.505.996a1.269 1.269 0 0 1-.796.66m-.001 16.688a1.269 1.269 0 0 1 .796.66l.505.996h1.862l.505-.996a1.269 1.269 0 0 1 .796-.66M3.656 9.768a1.269 1.269 0 0 1-.66.796L2 11.07v1.862l.996.505a1.269 1.269 0 0 1 .66.796m16.688-.001a1.269 1.269 0 0 1 .66-.796L22 12.93v-1.86l-.996-.505a1.269 1.269 0 0 1-.66-.796M7.678 4.522a1.269 1.269 0 0 1-1.03.096l-1.06-.348L4.27 5.587l.348 1.062a1.269 1.269 0 0 1-.096 1.03m11.8 11.799a1.269 1.269 0 0 1 1.03-.096l1.06.348 1.318-1.317-.348-1.062a1.269 1.269 0 0 1 .096-1.03m-14.956.001a1.269 1.269 0 0 1 .096 1.03l-.348 1.06 1.317 1.318 1.062-.348a1.269 1.269 0 0 1 1.03.096m11.799-11.8a1.269 1.269 0 0 1-.096-1.03l.348-1.06-1.317-1.318-1.062.348a1.269 1.269 0 0 1-1.03-.096" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg>
+                <svg aria-label="Options" className="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Options</title><circle cx="12" cy="12" fill="none" r="8.635" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></circle><path d="M14.232 3.656a1.269 1.269 0 0 1-.796-.66L12.93 2h-1.86l-.505.996a1.269 1.269 0 0 1-.796.66m-.001 16.688a1.269 1.269 0 0 1 .796.66l.505.996h1.862l.505-.996a1.269 1.269 0 0 1 .796-.66M3.656 9.768a1.269 1.269 0 0 1-.66.796L2 11.07v1.862l.996.505a1.269 1.269 0 0 1 .66.796m16.688-.001a1.269 1.269 0 0 1 .66-.796L22 12.93v-1.86l-.996-.505a1.269 1.269 0 0 1-.66-.796M7.678 4.522a1.269 1.269 0 0 1-1.03.096l-1.06-.348L4.27 5.587l.348 1.062a1.269 1.269 0 0 1-.096 1.03m11.8 11.799a1.269 1.269 0 0 1 1.03-.096l1.06.348 1.318-1.317-.348-1.062a1.269 1.269 0 0 1 .096-1.03m-14.956.001a1.269 1.269 0 0 1 .096 1.03l-.348 1.06 1.317 1.318 1.062-.348a1.269 1.269 0 0 1 1.03.096m11.799-11.8a1.269 1.269 0 0 1-.096-1.03l.348-1.06-1.317-1.318-1.062.348a1.269 1.269 0 0 1-1.03-.096" fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="2"></path></svg>
 
               </a>
             </div>
@@ -120,10 +126,10 @@ export function UserProfile() {
               </div>
             </div>
           }
-          <div className="user-info">
-            <section><a className="user-number">{profileStories.length}</a><a> stories</a></section>
-            <section><a className="user-number">{userProfile.followers.length}</a><a> followers</a></section>
-            <section><a className="user-number">{userProfile.following.length}</a><a> following</a></section>
+          <div className="user-info flex">
+            <section className="user-stories flex space-between"><a className="user-number flex">{profileStories.length}</a><a> stories</a></section>
+            <section className="user-followers flex"><a className="user-number flex">{userProfile.followers.length}</a><a> followers</a></section>
+            <section className="user-following flex"><a className="user-number flex">{userProfile.following.length}</a><a> following</a></section>
           </div>
           <div className="user-bio">
             <a className="user-name">{userProfile.fullname}</a>
@@ -169,7 +175,7 @@ export function UserProfile() {
           </section>
           :
           <section className="profile-stories">
-            {savedStories.map(story => <img key={story._id} src={story.imgUrl[0]} />)}
+            {savedStories.map(story => <img key={story._id} src={story.imgUrls[0]} />)}
           </section>
         }
       </div>

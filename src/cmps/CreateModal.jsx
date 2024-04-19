@@ -87,12 +87,12 @@ export function CreateModal() {
                                     value={createStory.txt}
                                     onChange={handleChange}
                                 />
-                                <i class="fa-regular fa-face-smile"></i>
+                                <i className="fa-regular fa-face-smile"></i>
                             </div>
                             <div className="btns-extra">
                                 <div className='input-container other location flex space-between' >
                                     <input className='other location' type="text" placeholder="Add location"></input>
-                                    <span className="icon material-symbols-outlined">
+                                    <span className="icon flex justify-center align-center material-symbols-outlined">
                                         location_on
                                     </span>
                                 </div>
@@ -101,13 +101,13 @@ export function CreateModal() {
                                     <input id="accessability"
                                         // style={{ visibility: "hidden" }}
 
-                                        className='other accessability' type="text" placeholder="Accessability"></input><i className=" icon fa-solid fa-chevron-down"></i>
+                                        className='other accessability' type="text" placeholder="Accessability"></input><i className=" icon flex justify-center align-center  fa-solid fa-chevron-down"></i>
                                 </div>
                                 <div className='input-container other advanced flex space-between'>
                                     {/* <label htmlFor="advanced" className='other advanced' ></label> */}
                                     <input id="advanced" className='other advanced'
                                         // style={{ visibility: "hidden" }} 
-                                        type="text" placeholder="Advanced settings"></input><i className="icon fa-solid fa-chevron-down"></i>
+                                        type="text" placeholder="Advanced settings"></input><i className="icon flex justify-center align-center  fa-solid fa-chevron-down"></i>
                                 </div>
                             </div>
                         </form>
