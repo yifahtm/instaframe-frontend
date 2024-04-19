@@ -69,11 +69,11 @@ export function CreateModal() {
                         <form onSubmit={onSaveStory}>
                             <div className='suggestion-user-info'>
                                 <img className='suggestion-photo' src={user.imgUrl}
-                                // onClick={goToProfile} 
+                                    onClick={goToProfile}
                                 />
                                 <div className='suggestion-user-name'>
                                     <a
-                                    // onClick={goToProfile}
+                                        onClick={goToProfile}
                                     >{user.username}</a>
                                 </div>
                             </div>

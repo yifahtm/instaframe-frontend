@@ -4,11 +4,11 @@ export function Suggestions({ user, goToProfile, switchIsOpen }) {
         <div className='suggestion-header'>
             <div className='suggestion-user-info'>
                 <img className='suggestion-photo' src={user.imgUrl}
-                // onClick={goToProfile} 
+                    onClick={goToProfile}
                 />
                 <div className='suggestion-user-name'>
                     <a
-                    // onClick={goToProfile}
+                        onClick={goToProfile}
                     >{user.username}</a>
                     <span>{user.fullname}</span>
                 </div>

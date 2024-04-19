@@ -156,7 +156,7 @@ export function StoryDetails() {
                         <div>
                             <img className="prew-user-img" src={story.by.imgUrl} />
                             <a className="details-username"
-                            // onClick={() => goToProfile(story.by.username)}
+                                onClick={() => goToProfile(story.by.username)}
                             >
                                 {story.by.username}
                             </a>
@@ -176,13 +176,13 @@ export function StoryDetails() {
                         <div className="comments-list">
                             <section className="comment">
                                 <img className="prew-user-img" src={story.by.imgUrl}
-                                // onClick={() => goToProfile(story.by.username)}
+                                    onClick={() => goToProfile(story.by.username)}
                                 />
                                 <div>
                                     <section>
                                         <span className="details-username"
 
-                                        // onClick={() => goToProfile(story.by.username)}
+                                            onClick={() => goToProfile(story.by.username)}
 
                                         >
                                             {story.by.username}
@@ -206,13 +206,13 @@ export function StoryDetails() {
                                     {story.comments.map(comment => <section className="comment" key={comment.id}>
                                         <img className="prew-user-img" src={comment.by?.imgUrl}
 
-                                        // onClick={() => goToProfile(comment.by.username)}
+                                            onClick={() => goToProfile(comment.by.username)}
 
                                         />
                                         <div>
                                             <section>
                                                 <span className="details-username"
-                                                //  onClick={() => goToProfile(comment.by.username)}
+                                                    onClick={() => goToProfile(comment.by.username)}
                                                 >
                                                     {comment.by?.username}
                                                 </span>
