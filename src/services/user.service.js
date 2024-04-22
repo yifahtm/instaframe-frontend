@@ -114,11 +114,12 @@ function getEmptyUser() {
 
 function getDemoUser() {
     return {
-        _id: "u101",
+        _id: "u102",
         username: "Muko",
         password: "mukmuk",
         fullname: "Muki Muka",
         imgUrl: "https://xsgames.co/randomusers/assets/avatars/female/73.jpg",
+        bio: 'Social media artist 🎨✨,  High end model💃🏼, Mommy🤰🏼',
         following: [
             {
                 _id: "u106",
@@ -151,6 +152,7 @@ function _createUsers() {
             password: "mukmuk",
             fullname: "Muki Muka",
             imgUrl: "https://xsgames.co/randomusers/assets/avatars/female/73.jpg",
+            bio: 'Social media artist 🎨✨,  High end model💃🏼, Mommy🤰🏼',
             following: [
                 {
                     _id: "u106",
@@ -165,7 +167,11 @@ function _createUsers() {
                     imgUrl: "http://some-img"
                 }
             ],
-            savedStoryIds: []
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
         },
         {
             _id: "u101",

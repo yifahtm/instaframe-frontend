@@ -7,13 +7,15 @@
 
 .profile-container {
     height: 100vh;
-    padding: 30px 0px;
-    width: 961px;
-    margin-left: 247px;
+    padding: 38px 0px;
+    width: 962px;
+    margin-left: -131px;
 
     .story {
         position: relative;
         cursor: pointer;
+        margin-bottom: -4px;
+
 
 
         .story-info {
@@ -93,7 +95,7 @@
             border: 1px double lightgray;
             border-style: double;
             background-color: rgb(249, 249, 249);
-            margin: 46px 0 13px -25px;
+            margin: 57px 0 13px -25px;
 
 
             .fa-plus {
@@ -124,7 +126,8 @@
     font-family: "Segoe UI";
     font-size: 16px;
     padding-right: 50px;
-    padding-top: 10px;
+    // padding-top: 10px;
+    margin-top: -17px;
     // align-items: center;
 
 
@@ -158,17 +161,39 @@
             &.follow {
                 background-color: #0095f6;
                 color: #ffffff;
+                padding: 0 19px;
 
                 &:hover {
                     background-color: #0083da;
                 }
             }
+
+            &.message {
+                font-size: 11px;
+                padding: 9px;
+            }
+
+            &.options {
+                background-color: none;
+                font-size: 20px;
+                background-color: $clr6;
+            }
         }
 
-        // div {
-        //     display: flex;
-        //     gap: 10px;
-        // }
+        div {
+            display: flex;
+            justify-content: space-between;
+            width: 150px;
+
+            button {
+                width: fit-content;
+
+            }
+
+            // &.fa-ellipsis {
+            //     background-color: transparent;
+            // }
+        }
     }
 
     .user-info {
@@ -236,7 +261,7 @@
 
 .profile-stories {
     padding-bottom: 50px;
-    gap: 2.5px;
+    gap: 3px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 961px;

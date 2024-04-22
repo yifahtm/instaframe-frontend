@@ -80,7 +80,367 @@ function getEmptyStory() {
 
 
 function _createStories() {
-    const story = [
+    const stories = [
+        {
+            _id: "s224",
+            txt: "Let Me See Your Likes!",
+            imgUrls: ["src/assets/imgs/alexander-andrews-mEdKuPYJe1I-unsplash.jpg"],
+            by: {
+                _id: "u102",
+                fullname: "Muki Muka",
+                username: "Muko",
+                imgUrl: "https://xsgames.co/randomusers/assets/avatars/female/73.jpg",
+            },
+            comments: [
+                {
+                    id: "c1001",
+                    by: {
+                        _id: "u105",
+                        fullname: "Bob",
+                        username: "Amarama_1990",
+                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                    },
+
+                    txt: "good one!",
+
+                    likedBy: [
+                        {
+                            _id: "u105",
+                            fullname: "Bob",
+                            username: "Amarama_1990",
+                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                        }
+                    ]
+                },
+
+                {
+                    id: "c1002",
+                    by: {
+                        _id: "u106",
+                        fullname: "Dob",
+                        username: "Doby_90",
+                        imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                    },
+                    txt: "not good!"
+                }
+            ],
+
+            likedBy: [
+                {
+                    _id: "u105",
+                    fullname: "Bob",
+                    username: "Amarama_1990",
+                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                },
+
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    username: "Doby_90",
+                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                }
+            ]
+        },
+        {
+            _id: "s225",
+            txt: "Stary nature night....Hope nothing attacks us 😝",
+            imgUrls: ["src/assets/imgs/denys-nevozhai-63Znf38gnXk-unsplash.jpg"],
+            by: {
+                _id: "u102",
+                fullname: "Muki Muka",
+                username: "Muko",
+                imgUrl: "https://xsgames.co/randomusers/assets/avatars/female/73.jpg",
+            },
+            comments: [
+                {
+                    id: "c1001",
+                    by: {
+                        _id: "u105",
+                        fullname: "Bob",
+                        username: "Amarama_1990",
+                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                    },
+
+                    txt: "good one!",
+
+                    likedBy: [
+                        {
+                            _id: "u105",
+                            fullname: "Bob",
+                            username: "Amarama_1990",
+                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                        }
+                    ]
+                },
+
+                {
+                    id: "c1002",
+                    by: {
+                        _id: "u106",
+                        fullname: "Dob",
+                        username: "Doby_90",
+                        imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                    },
+                    txt: "not good!"
+                }
+            ],
+
+            likedBy: [
+                {
+                    _id: "u105",
+                    fullname: "Bob",
+                    username: "Amarama_1990",
+                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                },
+
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    username: "Doby_90",
+                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                }
+            ]
+        },
+        {
+            _id: "s226",
+            txt: "I'm going on an adventure to the lonely mountain🧚🏼‍♀️👩🏼‍🌾",
+            imgUrls: ["src/assets/imgs/kazuend-2KXEb_8G5vo-unsplash.jpg"],
+            by: {
+                _id: "u102",
+                fullname: "Muki Muka",
+                username: "Muko",
+                imgUrl: "https://xsgames.co/randomusers/assets/avatars/female/73.jpg",
+            },
+            comments: [
+                {
+                    id: "c1001",
+                    by: {
+                        _id: "u105",
+                        fullname: "Bob",
+                        username: "Amarama_1990",
+                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                    },
+
+                    txt: "good one!",
+
+                    likedBy: [
+                        {
+                            _id: "u105",
+                            fullname: "Bob",
+                            username: "Amarama_1990",
+                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                        }
+                    ]
+                },
+
+                {
+                    id: "c1002",
+                    by: {
+                        _id: "u106",
+                        fullname: "Dob",
+                        username: "Doby_90",
+                        imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                    },
+                    txt: "not good!"
+                }
+            ],
+
+            likedBy: [
+                {
+                    _id: "u105",
+                    fullname: "Bob",
+                    username: "Amarama_1990",
+                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                },
+
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    username: "Doby_90",
+                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                }
+            ]
+        },
+        {
+            _id: "s227",
+            txt: "No words...",
+            imgUrls: ["src/assets/imgs/nasa-yZygONrUBe8-unsplash.jpg"],
+            by: {
+                _id: "u102",
+                fullname: "Muki Muka",
+                username: "Muko",
+                imgUrl: "https://xsgames.co/randomusers/assets/avatars/female/73.jpg",
+            },
+            comments: [
+                {
+                    id: "c1001",
+                    by: {
+                        _id: "u105",
+                        fullname: "Bob",
+                        username: "Amarama_1990",
+                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                    },
+
+                    txt: "good one!",
+
+                    likedBy: [
+                        {
+                            _id: "u105",
+                            fullname: "Bob",
+                            username: "Amarama_1990",
+                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                        }
+                    ]
+                },
+
+                {
+                    id: "c1002",
+                    by: {
+                        _id: "u106",
+                        fullname: "Dob",
+                        username: "Doby_90",
+                        imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                    },
+                    txt: "not good!"
+                }
+            ],
+
+            likedBy: [
+                {
+                    _id: "u105",
+                    fullname: "Bob",
+                    username: "Amarama_1990",
+                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                },
+
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    username: "Doby_90",
+                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                }
+            ]
+        },
+        {
+            _id: "s228",
+            txt: "Yet another adventure 😮",
+            imgUrls: ["src/assets/imgs/ratanjot-singh-UIhc7sohnvc-unsplash.jpg"],
+            by: {
+                _id: "u102",
+                fullname: "Muki Muka",
+                username: "Muko",
+                imgUrl: "https://xsgames.co/randomusers/assets/avatars/female/73.jpg",
+            },
+            comments: [
+                {
+                    id: "c1001",
+                    by: {
+                        _id: "u105",
+                        fullname: "Bob",
+                        username: "Amarama_1990",
+                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                    },
+
+                    txt: "good one!",
+
+                    likedBy: [
+                        {
+                            _id: "u105",
+                            fullname: "Bob",
+                            username: "Amarama_1990",
+                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                        }
+                    ]
+                },
+
+                {
+                    id: "c1002",
+                    by: {
+                        _id: "u106",
+                        fullname: "Dob",
+                        username: "Doby_90",
+                        imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                    },
+                    txt: "not good!"
+                }
+            ],
+
+            likedBy: [
+                {
+                    _id: "u105",
+                    fullname: "Bob",
+                    username: "Amarama_1990",
+                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                },
+
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    username: "Doby_90",
+                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                }
+            ]
+        },
+        {
+            _id: "s229",
+            txt: "Waiting, on the edge of tomorrow..",
+            imgUrls: ["src/assets/imgs/blake-cheek-AgE1Vmi-r_M-unsplash.jpg"],
+            by: {
+                _id: "u102",
+                fullname: "Muki Muka",
+                username: "Muko",
+                imgUrl: "https://xsgames.co/randomusers/assets/avatars/female/73.jpg",
+            },
+            comments: [
+                {
+                    id: "c1001",
+                    by: {
+                        _id: "u105",
+                        fullname: "Bob",
+                        username: "Amarama_1990",
+                        imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                    },
+
+                    txt: "good one!",
+
+                    likedBy: [
+                        {
+                            _id: "u105",
+                            fullname: "Bob",
+                            username: "Amarama_1990",
+                            imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                        }
+                    ]
+                },
+
+                {
+                    id: "c1002",
+                    by: {
+                        _id: "u106",
+                        fullname: "Dob",
+                        username: "Doby_90",
+                        imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                    },
+                    txt: "not good!"
+                }
+            ],
+
+            likedBy: [
+                {
+                    _id: "u105",
+                    fullname: "Bob",
+                    username: "Amarama_1990",
+                    imgUrl: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80"
+                },
+
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    username: "Doby_90",
+                    imgUrl: "https://i.pinimg.com/736x/90/bb/27/90bb272181024a601488c2e17affc743.jpg"
+                }
+            ]
+        },
         {
             _id: "s104",
             txt: "Exhibition  curated by @giulioaprin presents a spectrum of aerial photographers that push themselves into finding unusual and different point of view bringing us extraordinary facets of our reality.",
@@ -633,6 +993,6 @@ function _createStories() {
 
     ]
 
-    storageService._save(STORAGE_KEY, story)
+    storageService._save(STORAGE_KEY, stories)
 }
 

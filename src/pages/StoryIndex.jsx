@@ -22,7 +22,7 @@ import { LikesModal } from '../cmps/LikesModal.jsx';
 export function StoryIndex() {
     const stories = useSelector((storeState) => storeState.storyModule.stories)
     const isLoading = useSelector((storeState) => storeState.storyModule.isLoading)
-    const user = useSelector((storeState) => storeState.userModule.loggedinUser)
+    const user = useSelector((storeState) => storeState.userModule.watchedUser)
     // const filterBy = useSelector((storeState) => storeState.storyModule.filterBy)
     const [likes, likesIsOpen] = useState([])
     const navigate = useNavigate()
@@ -41,10 +41,6 @@ export function StoryIndex() {
             console.log('Cannot remove story', err)
             showErrorMsg('Cannot remove story')
         }
-    }
-
-    function onSetFilter(filterBy) {
-        setFilter(filterBy)
     }
 
     function goToProfile() {

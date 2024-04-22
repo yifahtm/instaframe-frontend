@@ -18,6 +18,7 @@ import { utilService } from '../services/util.service'
 
 export function UserProfile() {
   const params = useParams()
+  // const users = useSelector(storeState => storeState.userModule.users)
   const user = useSelector(storeState => storeState.userModule.watchedUser)
   const stories = useSelector(storeState => storeState.storyModule.stories)
 
@@ -32,16 +33,21 @@ export function UserProfile() {
 
   useEffect(() => {
     loadStories()
+    // console.log(users)
     loadUser(user._id)
+    // loadUsers()
   }, [])
 
   // if (loggedInUser)
 
   userProfile = user
   // else {
-  //   userProfile = users.find(user => user._id === params.id)
+  //   console.log(users)
+  //   userProfile = users.find(user =>
+  //     user._id === params.id)
   // }
 
+  console.log(stories)
   const profileStories = stories.filter(story => story.by._id === userProfile._id)
   const savedStories = stories.filter(story => user.savedStoryIds.includes(story._id))
 
@@ -99,10 +105,12 @@ export function UserProfile() {
       <section className="profile-header">
         <section className="profile-photo">
           <img src={userProfile.imgUrl} />
-          <div className='highlights flex column space-between justify-center'>
-            <button className='btn-highlights' id=' btn-highlights'><i class="fa-solid fa-plus"></i></button>
-            <label htmlFor='btn-highlights'>New</label>
-          </div>
+          {loggedInUser &&
+            <div className='highlights flex column space-between justify-center'>
+              <button className='btn-highlights' id=' btn-highlights'><i className="fa-solid fa-plus"></i></button>
+              <label htmlFor='btn-highlights'>New</label>
+            </div>
+          }
         </section>
         <section className="profile-info">
           {loggedInUser ?
@@ -120,9 +128,23 @@ export function UserProfile() {
               <a>{userProfile.username}</a>
               <div>
                 {checkFollow() ? <button onClick={toggleFollow}>Following</button> : <button onClick={toggleFollow} className='follow'>Follow</button>}
-                <button
+                <button className='message'
                 //  onClick={goToMessages}
-                >Message</button>
+                ><i class="fa-solid fa-user-pen"></i></button>
+                <button className='options'
+                //  onClick={() => setIsListOpen(!isListOpen)}
+
+                >
+                  <i className="fa-solid fa-ellipsis"></i>
+                  {/* {isListOpen &&
+                  <ActionListModal
+                    onRemoveStory={onRemoveStory}
+                    story={story}
+                    isListOpen={isListOpen}
+                    setIsListOpen={setIsListOpen}
+                  />} */}
+
+                </button>
               </div>
             </div>
           }
@@ -139,7 +161,7 @@ export function UserProfile() {
       </section>
       <div className='content-container'>
         <section className="profile-links">
-          <section onClick={() => setToggle('stories')} className={toggle === "stories" ? "profile-pics-link activated" : "profile-pics-link"}><a className='posts-icon'>{toggle === "posts" ?
+          <section onClick={() => setToggle('stories')} className={toggle === "stories" ? "profile-pics-link activated" : "profile-pics-link"}><a className='stories-icon'>{toggle === "stories" ?
 
             <svg aria-label="" className="_ab6-" color="#262626" fill="#262626" height="12" role="img" viewBox="0 0 24 24" width="12"><rect fill="none" height="18" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" width="18" x="3" y="3"></rect><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="9.015" x2="9.015" y1="3" y2="21"></line><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="14.985" x2="14.985" y1="3" y2="21"></line><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="21" x2="3" y1="9.015" y2="9.015"></line><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="21" x2="3" y1="14.985" y2="14.985"></line></svg> : <svg aria-label="" className="_ab6-" color="#8e8e8e" fill="#8e8e8e" height="12" role="img" viewBox="0 0 24 24" width="12"><rect fill="none" height="18" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" width="18" x="3" y="3"></rect><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="9.015" x2="9.015" y1="3" y2="21"></line><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="14.985" x2="14.985" y1="3" y2="21"></line><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="21" x2="3" y1="9.015" y2="9.015"></line><line fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" x1="21" x2="3" y1="14.985" y2="14.985"></line></svg>
 
@@ -171,7 +193,7 @@ export function UserProfile() {
                   </div>
                 </div>
               </section>
-              <img key={story.imgUrl} src={story.imgUrl} /></div>)}
+              <img key={story.imgUrl} src={story.imgUrls[0]} /></div>)}
           </section>
           :
           <section className="profile-stories">
