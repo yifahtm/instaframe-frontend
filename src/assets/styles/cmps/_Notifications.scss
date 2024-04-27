@@ -1,0 +1,122 @@
+.notifications-modal {
+    margin-left: 74px;
+    position: fixed;
+    width: 396px;
+    height: 100vh;
+    box-shadow: 9px 0px 16px 0px #00000021;
+    overflow-y: auto;
+    transition: transform .6s, box-shadow .6s;
+    z-index: 1;
+    background-color: #fff;
+    border-right: 1px solid #dbdbdb;
+
+    &.hide {
+        transform: translateX(-100%);
+        transition: transform .6s, box-shadow .6s;
+        box-shadow: none;
+    }
+
+    header {
+        padding: 24px 16px 24px 24px;
+        border-bottom: 1px solid #dbdbdb;
+
+        span {
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+
+    .user-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 20px;
+        cursor: pointer;
+
+        img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+
+
+        &:hover {
+            background-color: rgb(249, 249, 249);
+        }
+
+        &.active {
+            background-color: rgb(242, 242, 242);
+        }
+
+        div {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+
+            img {
+                // width: 56px;
+                // height: 56px;
+                // object-fit: cover;
+                border-radius: 50%;
+            }
+
+            section {
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            .new {
+                font-size: 14px;
+                font-weight: 600;
+
+                .message {
+                    // display: flex;
+                    // gap: 5px;
+                    color: #000000;
+                }
+
+                .time {
+                    font-weight: 400;
+                    color: #8e8e8e;
+                }
+            }
+
+        }
+
+        .message {
+            display: flex;
+            gap: 5px;
+            color: #8e8e8e;
+
+            .time {
+                font-weight: 400;
+            }
+        }
+
+    }
+
+}
+
+@include for-narrow-layout {
+    .notifications-modal {
+
+        &.hide {
+            transform: translateX(-130%);
+        }
+    }
+}
+
+
+@include for-mobile-layout {
+
+    .notifications-modal {
+        margin-left: 0;
+        width: 100vw;
+
+        header {
+            padding: 0;
+        }
+    }
+
+}
