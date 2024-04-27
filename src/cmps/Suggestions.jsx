@@ -14,7 +14,7 @@ export function Suggestions({ user, goToProfile, switchIsOpen }) {
                 </div>
             </div>
             <a className='suggestion-switch'
-            // onClick={() => switchIsOpen(true)}
+                onClick={() => switchIsOpen(true)}
             >Switch</a>
         </div>
 
