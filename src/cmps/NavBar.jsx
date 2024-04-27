@@ -4,12 +4,15 @@ import { Fragment, useState, useEffect } from 'react'
 import { socketService } from '../services/socket.service.js'
 // import { logout } from '../store/user.actions.js'
 import { toggleModal } from '../store/system.actions.js'
+import { SearchModal } from './SearchModal.jsx'
 import { CreateModal } from './CreateModal.jsx'
 
 export function NavBar() {
     const user = useSelector(storeState => storeState.userModule.watchedUser)
-    const newMessage = useSelector(storeState => storeState.messageModule.newMessage)
     const isModalOpen = useSelector(storeState => storeState.systemModule.isModalOpen)
+    const newMessage = useSelector(storeState => storeState.messageModule.newMessage)
+
+    const [searchModal, setSearchModal] = useState(false)
     const [full, setFull] = useState(true)
 
     console.log(user)
@@ -22,10 +25,11 @@ export function NavBar() {
         setFull(true)
     }
 
-    // function onSearch() {
-    //     setSearchModal(!searchModal)
-    //     setFull(!full)
-    // }
+    function onSearch() {
+        setSearchModal(!searchModal)
+        setFull(!full)
+    }
+
     // function onNotifications() {
     //     // setSearchModal(!searchModal)
     //     notificationsModal(!notifications)
@@ -78,14 +82,14 @@ export function NavBar() {
     // if (!user) return <div className="loading-page"></div>
     return (
         <>
-
+            <SearchModal setSearchModal={setSearchModal} searchModal={searchModal} full={full} setFull={setFull} />
             <section className={full ? "nav-bar" : "nav-bar mini"}>
                 <a href='/'>
                     {full ? <h1 onClick={onFull} className="logo">Instaframe</h1> : null}
                 </a>
                 <nav className="nav-links">
                     <NavLink onClick={onFull} className='nav-btn' to='/'><span className='nav-icon'><i className="fa-solid fa-house"></i></span><span className='nav-name'>Home</span></NavLink>
-                    <a className='nav-btn'><span className='nav-icon'><i className="fa-solid fa-magnifying-glass"></i></span><span className='nav-name'>Search</span></a>
+                    <a onClick={onSearch} className='nav-btn'><span className='nav-icon'><i className="fa-solid fa-magnifying-glass"></i></span><span className='nav-name'>Search</span></a>
                     <a onClick={onFull} className='nav-btn'><span className='nav-icon'><i className="fa-regular fa-compass"></i></span><span className='nav-name' >Explore</span></a>
                     {/* <div className="btns-dif-spacing"> */}
                     <NavLink onClick={onMessages} className='nav-btn messages' to='/inbox'><span className='nav-icon'><i className="fa-brands fa-facebook-messenger"></i></span>{newMessage && newMessage.review ? <span className='new-msg'></span> : null}<span className='nav-name'>Messages</span></NavLink>

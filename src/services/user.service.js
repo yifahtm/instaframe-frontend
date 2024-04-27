@@ -17,11 +17,20 @@ export const userService = {
     update,
     changeScore,
     getEmptyUser,
-    getDemoUser
+    getDemoUser,
+    filterUsers
 }
 
 window.userService = userService
 
+function filterUsers(filterBy, users) {
+    if (!users.length) return
+    const regex = new RegExp(filterBy.txt, 'i')
+    users = users.filter(user => {
+        return regex.test(user.username)
+    })
+    return users
+}
 
 async function getUsers() {
     const users = await storageService.query(STORAGE_KEY_USERS)
