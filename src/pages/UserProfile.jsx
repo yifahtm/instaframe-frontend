@@ -130,7 +130,7 @@ export function UserProfile() {
                 {checkFollow() ? <button onClick={toggleFollow}>Following</button> : <button onClick={toggleFollow} className='follow'>Follow</button>}
                 <button className='message'
                 //  onClick={goToMessages}
-                ><i class="fa-solid fa-user-pen"></i></button>
+                ><i className="fa-solid fa-user-pen"></i></button>
                 <button className='options'
                 //  onClick={() => setIsListOpen(!isListOpen)}
 
