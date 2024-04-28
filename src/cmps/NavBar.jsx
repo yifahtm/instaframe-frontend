@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Fragment, useState, useEffect } from 'react'
 import { socketService } from '../services/socket.service.js'
 import { gotNewNotification } from '../store/user.actions.js'
-// import { logout } from '../store/user.actions.js'
+import { logout } from '../store/user.actions.js'
 import { toggleModal } from '../store/system.actions.js'
 import { SearchModal } from './SearchModal.jsx'
 import { Notifications } from './Notifications.jsx'
@@ -18,6 +18,7 @@ export function NavBar() {
     const [searchModal, setSearchModal] = useState(false)
     const [notifications, notificationsModal] = useState(false)
     const [activityNotif, setActivityNotif] = useState([])
+    const [isExpanded, setIsExpanded] = useState(false)
     const [full, setFull] = useState(true)
 
     console.log(user)
@@ -42,16 +43,17 @@ export function NavBar() {
         setFull(!full)
     }
 
-    // async function onLogout() {
-    //     try {
-    //         await logout()
-    //         console.log('USER FROM LOGOUT')
+    async function onLogout() {
+        try {
+            await logout()
+            console.log('USER FROM LOGOUT')
 
-    //     } catch (err) {
-    //         console.log(err)
-    //     }
-    // }
-    const onReciveNewActivity = (activity) => {
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    const onRecieveNewActivity = (activity) => {
         setActivityNotif(prevActivity => [...prevActivity, activity])
         // activityNotif.unshift(activity)
         console.log('ACTIVITY', activity)
@@ -59,10 +61,10 @@ export function NavBar() {
     }
 
     useEffect(() => {
-        socketService.on('new-reacting-activity', onReciveNewActivity)
+        socketService.on('new-reacting-activity', onRecieveNewActivity)
 
         return () => {
-            socketService.off('new-reacting-activity', onReciveNewActivity)
+            socketService.off('new-reacting-activity', onRecieveNewActivity)
         }
     }, [])
 
@@ -101,9 +103,18 @@ export function NavBar() {
                         </span><span className='nav-name' >Profile</span></NavLink>
                     {/* </div> */}
                 </nav>
-                <div className="more">
+                {/* <div className="more">
                     <a className='nav-btn'><span className='nav-icon'><i className="fa-solid fa-bars"></i></span><span className='nav-name' >More</span></a>
+                </div> */}
+
+                <div>
+                    <div className={isExpanded ? 'nav-more open' : 'nav-more'}>
+                        <Link className='nav-more-btn' to='switch'>Switch accounts</Link>
+                        {/* <a className='nav-btn' onClick={onLogout}>Logout</a> */}
+                        <Link onClick={onLogout} className='nav-more-btn' to='login'>Logout</Link>
+                    </div>
                 </div>
+                <a className="nav-bar-more" onClick={() => setIsExpanded(!isExpanded)}><i className="fa-solid fa-bars"></i><span>More</span></a>
             </section>
         </>
     )
