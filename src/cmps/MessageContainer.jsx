@@ -35,19 +35,19 @@ export function MessageContainer({ chatWithId, currChat, onAddMessage }) {
     objDiv.scrollTop = objDiv.scrollHeight;
 
 
-    const onReciveMessage = (msg) => {
+    const onRecieveMessage = (msg) => {
         console.log(msg)
         setMessages(prevMessages => [...prevMessages, msg])
     }
 
     useEffect(() => {
         // socketService.on('message-to-you', console.log('hello2'))
-        socketService.on('message-to-user', onReciveMessage)
+        socketService.on('message-to-user', onRecieveMessage)
         console.log('ref')
 
         return () => {
             // socketService.off(SOCKET_EVENT_ADD_MSG, addMsg)
-            socketService.off('message-to-user', onReciveMessage)
+            socketService.off('message-to-user', onRecieveMessage)
             // botTimeout && clearTimeout(botTimeout)
         }
     }, [])
@@ -95,7 +95,7 @@ export function MessageContainer({ chatWithId, currChat, onAddMessage }) {
     }
 
     // if (!watchedUser) return
-    return <section className="messanger-container">
+    return <section className="message-container">
         {watchedUser ?
             <header>
                 <div className="user-info" onClick={goToUser}>
@@ -129,7 +129,7 @@ export function MessageContainer({ chatWithId, currChat, onAddMessage }) {
             {/* <EmojiPicker height={200} width={200} /> */}
             <span onClick={() => setShouldRenderEmojiPicker(!shouldRenderEmojiPicker)}><i className="fa-regular fa-face-smile"></i></span>
             <TxtInput comment={message} setComment={setMessage} addStoryComment={addMessage} />
-            <a className={message.txt ? 'active' : 'none'} onClick={addMessage}>Send</a>
+            <a className={message.txt ? 'activated' : 'none'} onClick={addMessage}>Send</a>
         </div>
     </section>
 }

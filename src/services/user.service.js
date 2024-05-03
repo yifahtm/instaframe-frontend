@@ -154,9 +154,9 @@ function getDemoUser() {
 
 
 function _createUsers() {
-    const user = [
+    const users = [
         {
-            _id: "u102",
+            _id: "u1022",
             username: "Muko",
             password: "mukmuk",
             fullname: "Muki Muka",
@@ -183,7 +183,7 @@ function _createUsers() {
             ]
         },
         {
-            _id: "u101",
+            _id: "u1011",
             username: "Vasya",
             password: "12345",
             fullname: "Vasya Vasilivich",
@@ -223,9 +223,975 @@ function _createUsers() {
                 "s111",
                 "s123"
             ]
-        }
+        },
+        {
+            _id: "u1033",
+            fullname: "Deniska",
+            username: "denchik1996",
+            imgUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+            password: "12345",
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u1044",
+            username: "miniGun777",
+            fullname: "Bob",
+            imgUrl: "https://st2.depositphotos.com/3143277/8644/i/600/depositphotos_86446164-stock-photo-business-man-in-office.jpg",
+            password: "12345",
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u1055",
+            fullname: "Bob",
+            username: "Amarama_1990",
+            imgUrl: "https://i.pinimg.com/280x280_RS/52/97/74/52977407847a9767757d40bb93644b58.jpg",
+            password: "12345",
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u1066",
+            fullname: "Ulash Ulashi",
+            username: "ulash888",
+            imgUrl: "https://i.pinimg.com/736x/28/3a/b1/283ab1108ef8e379a2e555de019e1aee.jpg",
+            password: "12345",
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u1077",
+            fullname: "Bobby bob",
+            username: "RobbyBoby21",
+            imgUrl: "https://i.pinimg.com/474x/85/59/09/855909df65727e5c7ba5e11a8c45849a.jpg",
+            password: "12345",
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "seller1",
+            fullname: "Lady Shoes & Bags 👠",
+            username: "lady_shoes_and_bags",
+            imgUrl: "https://cdn.shopify.com/s/files/1/0074/6320/7027/articles/ultimate-guide-to-womens-bags_2048x.jpg?v=1572446822",
+            password: "12345",
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "seller3",
+            fullname: "chanelofficial",
+            username: "chanelofficial",
+            imgUrl: "http://cdn.shopify.com/s/files/1/0434/3103/5031/products/Sticker-autocollant-Logo-chanel-metallique-Deco-Sticker-Store-412.png?v=1672147188",
+            password: "12345",
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u1088",
+            username: "redBread",
+            fullname: "Dob",
+            imgUrl: "src/assets/imgs/chatsImg/tegan-mierle-ioyEITUD2G8-unsplash.jpg",
+            password: "12345",
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u1099",
+            username: "Amarama_1990",
+            fullname: "Bob",
+            imgUrl: "src/assets/imgs/chatsImg/craig-mckay-jmURdhtm7Ng-unsplash.jpg",
+            password: "12345",
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u101010",
+            username: "Amarama_1990",
+            fullname: "Bob",
+            imgUrl: "src/assets/imgs/chatsImg/ethan-hoover-0YHIlxeCuhg-unsplash.jpg",
+            password: "12345",
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u101111",
+            username: "Guenna",
+            password: "12345",
+            fullname: "Guenna Barns",
+            imgUrl: 'src/assets/imgs/chatsImg/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u101212",
+            username: "Shalom",
+            password: "12345",
+            fullname: "Shalom Rahamim",
+            imgUrl: 'src/assets/imgs/chatsImg/jonas-kakaroto-mjRwhvqEC0U-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u101313",
+            username: "Sugen",
+            password: "12345",
+            fullname: "Sugen Kyoto",
+            imgUrl: 'src/assets/imgs/chatsImg/joseph-pearson-827XUhVSp8M-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u101414",
+            username: "Merry",
+            password: "12345",
+            fullname: "Merry Brons",
+            imgUrl: 'src/assets/imgs/chatsImg/karl-magnuson-85J99sGggnw-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u101515",
+            username: "Elio",
+            password: "12345",
+            fullname: "Elio Vasquez",
+            imgUrl: 'src/assets/imgs/chatsImg/kelly-sikkema-JN0SUcTOig0-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u101616",
+            username: "Spring",
+            password: "12345",
+            fullname: "Spirng Hollow",
+            imgUrl: 'src/assets/imgs/chatsImg/matheus-ferrero-pg_WCHWSdT8-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u101717",
+            username: "Durma",
+            password: "12345",
+            fullname: "Durma Babylon",
+            imgUrl: 'src/assets/imgs/chatsImg/mubariz-mehdizadeh-t3zrEm88ehc-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u101818",
+            username: "Eliya",
+            password: "12345",
+            fullname: "Eliya Photos",
+            imgUrl: 'src/assets/imgs/chatsImg/noah-silliman-gzhyKEo_cbU-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u101919",
+            username: "Sunset",
+            password: "12345",
+            fullname: "Sunset Grace",
+            imgUrl: 'src/assets/imgs/chatsImg/pablo-heimplatz-EAvS-4KnGrk-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u102020",
+            username: "Shlomo_Vintage_Photography",
+            password: "12345",
+            fullname: "Shlomo Hagoel",
+            imgUrl: 'src/assets/imgs/chatsImg/sergio-de-paula-c_GmwfHBDzk-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u102121",
+            username: "Loram",
+            password: "12345",
+            fullname: "Lora Mallark",
+            imgUrl: 'src/assets/imgs/chatsImg/stefan-stefancik-QXevDflbl8A-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u102222",
+            username: "AliYo",
+            password: "12345",
+            fullname: "Ali Yossef",
+            imgUrl: 'src/assets/imgs/chatsImg/tegan-mierle-ioyEITUD2G8-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
+        {
+            _id: "u102323",
+            username: "Gracie_I",
+            password: "12345",
+            fullname: "Gracie Illinovitz",
+            imgUrl: 'src/assets/imgs/chatsImg/christopher-campbell-rDEOVtE7vOs-unsplash.jpg',
+            bio: 'Traveling and sharing my life! Folow me to see more!',
+            following: [
+                {
+                    _id: "u106",
+                    fullname: "Dob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u100",
+                    fullname: "Rob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            followers: [
+                {
+                    _id: "u115",
+                    fullname: "Mob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u125",
+                    fullname: "Gob",
+                    imgUrl: "http://some-img"
+                },
+                {
+                    _id: "u135",
+                    fullname: "Fob",
+                    imgUrl: "http://some-img"
+                }
+            ],
+            savedStoryIds: [
+                "s104",
+                "s111",
+                "s123"
+            ]
+        },
     ]
-    storageService._save(STORAGE_KEY_USERS, user)
+    storageService._save(STORAGE_KEY_USERS, users)
 }
 
 // ;(async ()=>{
