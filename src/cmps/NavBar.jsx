@@ -21,8 +21,6 @@ export function NavBar() {
     const [isExpanded, setIsExpanded] = useState(false)
     const [full, setFull] = useState(true)
 
-    console.log(user)
-
     function onMessages() {
         setFull(!full)
     }
@@ -88,7 +86,7 @@ export function NavBar() {
                 <nav className="nav-links">
                     <NavLink onClick={onFull} className='nav-btn' to='/'><span className='nav-icon'><i className="fa-solid fa-house"></i></span><span className='nav-name'>Home</span></NavLink>
                     <a onClick={onSearch} className='nav-btn'><span className='nav-icon'><i className="fa-solid fa-magnifying-glass"></i></span><span className='nav-name'>Search</span></a>
-                    <a onClick={onFull} className='nav-btn'><span className='nav-icon'><i className="fa-regular fa-compass"></i></span><span className='nav-name' >Explore</span></a>
+                    <NavLink onClick={onFull} className='nav-btn' to='explore'><span className='nav-icon'><i className="fa-regular fa-compass"></i></span><span className='nav-name' >Explore</span></NavLink>
                     {/* <div className="btns-dif-spacing"> */}
                     <NavLink onClick={onMessages} className='nav-btn messages' to='/inbox'><span className='nav-icon'><i className="fa-brands fa-facebook-messenger"></i></span>{newMessage && newMessage.review ? <span className='new-msg'></span> : null}<span className='nav-name'>Messages</span></NavLink>
                     <a onClick={onNotifications} className='nav-btn notifications n'><span className='nav-icon'><i className="fa-regular fa-heart"></i></span>{newNotification ? <span className='new-msg'></span> : null}<span className='nav-name'>Notifications</span></a>
