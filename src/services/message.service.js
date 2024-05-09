@@ -27,14 +27,14 @@ export const messageService = {
 
 function query(filterBy) {
     var queryStr = (!filterBy) ? '' : `?userId=${filterBy.userId}`
-    // return httpService.get(`message${queryStr}`)
-    return storageService.get(`message${queryStr}`)
+    return httpService.get(`message${queryStr}`)
+    // return storageService.get(`message${queryStr}`)
 }
 
 async function getAvailableChats() {
     try {
-        // return await httpService.get('message/userChats')
-        return await storageService.get('message/userChats')
+        return await httpService.get('message/userChats')
+        // return await storageService.get('message/userChats')
 
     } catch (err) {
         console.log(err)
@@ -42,13 +42,13 @@ async function getAvailableChats() {
 }
 
 async function add(messageToSend) {
-    // await httpService.post(`message`, messageToSend)
-    await storageService.post(`message`, messageToSend)
+    await httpService.post(`message`, messageToSend)
+    // await storageService.post(`message`, messageToSend)
 
     return messageToSend
 }
 
 async function remove(reviewId) {
-    // await httpService.delete(`review/${reviewId}`)
-    await storageService.remove('review', reviewId)
+    await httpService.delete(`review/${reviewId}`)
+    // await storageService.remove('review', reviewId)
 }

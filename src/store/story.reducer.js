@@ -53,7 +53,7 @@
 //     return newState
 // }
 
-import { storieservice } from "../services/story.service.js"
+import { storyService } from "../services/story.service.local.js"
 
 export const SET_FILTER = 'SET_FILTER'
 export const SET_STORIES = 'SET_STORIES'
@@ -66,7 +66,7 @@ export const SET_IS_LOADING = 'SET_IS_LOADING'
 
 
 const initialState = {
-    // filterBy: storieservice.getDefaultFilter(),
+    // filterBy: storyService.getDefaultFilter(),
     isLoading: false,
     stories: [],
     lastStories: [],

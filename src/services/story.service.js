@@ -7,7 +7,7 @@ import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'story'
 
-export const storieservice = {
+export const storyService = {
     query,
     getById,
     save,
@@ -15,7 +15,7 @@ export const storieservice = {
     getEmptyStory,
     addStoryMsg
 }
-window.cs = storieservice
+window.cs = storyService
 
 
 async function query(filterBy = { txt: '', price: 0 }) {

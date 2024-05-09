@@ -68,7 +68,7 @@ export const SET_SCORE = 'SET_SCORE'
 export const NEW_NOTIFICATION = 'NEW_NOTIFICATION'
 
 
-const initialState = {
+export const initialState = {
     count: 10,
     loggedinUser: userService.getDemoUser(),
     watchedUser: userService.getDemoUser(),

@@ -11,18 +11,17 @@ export const reviewService = {
 
 function query(filterBy) {
   var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
-  // return httpService.get(`review${queryStr}`)
-  return storageService.query('review')
+  return httpService.get(`review${queryStr}`)
+  // return storageService.query('review')
 }
 
 async function remove(reviewId) {
-  // await httpService.delete(`review/${reviewId}`)
-  await storageService.remove('review', reviewId)
+  await httpService.delete(`review/${reviewId}`)
+  // await storageService.remove('review', reviewId)
 }
 
-async function add({txt, aboutUserId}) {
-  // const addedReview = await httpService.post(`review`, {txt, aboutUserId})
-  
+async function add({ txt, aboutUserId }) {
+
   const aboutUser = await userService.getById(aboutUserId)
 
   const reviewToAdd = {
@@ -35,8 +34,10 @@ async function add({txt, aboutUserId}) {
     }
   }
 
-  reviewToAdd.byUser.score += 10
+  add.reviewService(reviewToAdd)
   await userService.update(reviewToAdd.byUser)
-  const addedReview = await storageService.post('review', reviewToAdd)
-  return addedReview
+  await httpService.post(`review`, reviewToAdd)
+  // const addedReview = await httpService.post(`review`, {txt, aboutUserId})
+  // const addedReview = await storageService.post('review', reviewToAdd)
+  return reviewToAdd
 }
