@@ -1,6 +1,6 @@
 .main-container {
     display: grid;
-    grid-template-columns: 20px 1fr 20px;
+    grid-template-columns: 20px 546px 20px;
 
     >* {
         grid-column: 2;
@@ -22,7 +22,7 @@
 
     @include for-wide-layout {
         grid-template-columns:
-            minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
+            minmax(20px, 20px) minmax(auto, 546px) minmax(20px, 1fr);
     }
 }
 

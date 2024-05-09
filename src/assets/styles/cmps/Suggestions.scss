@@ -1,8 +1,10 @@
 .suggestions {
-    display: flex;
+    display: grid;
+    grid-column: 3/-1;
+    place-self: start;
     width: 315px;
     flex-direction: column;
-    gap: 15px;
+    gap: 21px;
     font-size: 14px;
 
     .suggestion-header {
@@ -37,8 +39,8 @@
         gap: 15px;
 
         .suggestion-photo {
-            width: 56px;
-            height: 56px;
+            width: 43px;
+            height: 43px;
             object-fit: cover;
             border-radius: 50%;
         }
@@ -115,8 +117,8 @@
         gap: 10px;
 
         img {
-            height: 32px;
-            width: 32px;
+            height: 43px;
+            width: 43px;
             object-fit: cover;
             border-radius: 50%;
             cursor: pointer;

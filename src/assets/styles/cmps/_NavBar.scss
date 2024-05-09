@@ -104,7 +104,7 @@
             font-size: 16px;
         }
 
-        &.activated {
+        &.active {
             color: $clr7;
             font-weight: 700;
         }
@@ -255,6 +255,10 @@
             display: none;
         }
 
+        h1.logo {
+            display: none;
+        }
+
         .icon {
             width: 0;
             display: none;
@@ -294,7 +298,7 @@
                 font-size: 16px;
             }
 
-            &.activated {
+            &.active {
                 color: black;
                 font-weight: 700;
             }
@@ -413,7 +417,7 @@
                 font-size: 16px;
             }
 
-            &.activated {
+            &.active {
                 color: black;
                 font-weight: 700;
             }

@@ -1,6 +1,7 @@
 .story-list {
     list-style: none;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
 
     h3 {
