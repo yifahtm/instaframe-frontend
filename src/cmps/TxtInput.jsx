@@ -28,6 +28,7 @@ export function TxtInput({ comment, setComment, addStoryComment }) {
                 {errors.txt && touched.txt ? (
                     <span>{errors.txt}</span>
                 ) : null}
+                {/* <button className={comment.txt ? 'activated' : 'none'} onClick={addStoryComment}>Post</button> */}
             </Form>
         )}
 

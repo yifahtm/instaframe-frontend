@@ -41,19 +41,22 @@ async function remove(storyId) {
 async function save(story) {
     let savedStory
     if (story._id) {
+        console.log(story)
         savedStory = await storageService.put(STORAGE_KEY, story)
     } else {
         // Later, owner is set by the backend
-        // story.owner = userService.getLoggedinUser()
+        story.owner = userService.getLoggedinUser()
+        console.log(story)
         savedStory = await storageService.post(STORAGE_KEY, story)
     }
     return savedStory
 }
 
-async function addStoryCmt(story, storyId, cmt) {
+async function addStoryCmt(storyId, cmt) {
     const updatedStory = await storageService.get(STORAGE_KEY, storyId)
     //   const updatedStory = await getById(storyId)
     updatedStory.comments.push(cmt)
+    console.log(updatedStory)
     save(updatedStory)
     return storageService.post(STORAGE_KEY, storyId)
 }

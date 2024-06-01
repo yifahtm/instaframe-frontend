@@ -10,9 +10,6 @@ import { loadUser } from '../store/user.actions.js'
 import { store } from '../store/store.js'
 import { showSuccessMsg } from '../services/event-bus.service.js'
 
-// import { IoMdApps } from 'react-icons/io'
-// import { BsBookmark, BsPersonSquare } from 'react-icons/bs'
-
 // import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
 import { utilService } from '../services/util.service'
 
@@ -34,7 +31,7 @@ export function UserProfile() {
   useEffect(() => {
     loadStories()
     // console.log(users)
-    loadUser(user._id)
+    loadUser(params.id)
     // loadUsers()
   }, [])
 

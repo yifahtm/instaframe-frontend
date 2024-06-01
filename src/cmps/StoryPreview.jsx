@@ -83,7 +83,9 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes })
 
     async function addStoryComment(ev) {
         ev.preventDefault()
-        const newComment = storyService.addStoryCmt(comment.txt, user)
+        console.log(story._id, comment)
+        const newComment = storyService.addStoryCmt(story._id, comment)
+        console.log(story._id, comment)
         story.comments.push(newComment)
         await storyService.save(story)
 

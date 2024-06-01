@@ -11,7 +11,7 @@ import { TxtInput } from "./TxtInput.jsx"
 
 export function CreateModal() {
     const [createStory, setCreateStory] = useState(storyService.getEmptyStory())
-    const user = useSelector((storeState) => storeState.userModule.loggedinUser)
+    const user = useSelector((storeState) => storeState.userModule.watchedUser)
 
     const fileTypes = ["JPEG", "PNG", "GIF"]
 

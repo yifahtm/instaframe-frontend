@@ -56,7 +56,9 @@ export function StoryDetails() {
 
     async function addStoryComment(ev) {
         ev.preventDefault()
-        const newComment = storyService.addStoryCmt(comment.txt, user)
+        console.log(story._id)
+        console.log(comment)
+        const newComment = await storyService.addStoryCmt(story._id, comment)
         story.comments.push(newComment)
         await storyService.save(story)
 

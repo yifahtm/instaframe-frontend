@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 export function Actions({ story, likesIsOpen, toggleLike, checkLike,
     toggleSave, checkSave }) {
-    console.log(story)
     return (
         <div className="btn-container">
             <a

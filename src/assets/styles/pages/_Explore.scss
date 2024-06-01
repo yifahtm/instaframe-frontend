@@ -1,0 +1,120 @@
+.story-preview {
+    position: relative;
+    cursor: pointer;
+    margin-right: 0;
+    // height: 33vw;
+    // margin-bottom: -4px;
+
+
+
+    .story-info {
+
+        position: absolute;
+        width: 307px;
+        height: 307px;
+
+        overflow-y: hidden;
+
+        .likes-comm {
+            display: none;
+        }
+
+        &:hover {
+
+            .likes-comm {
+                position: absolute;
+                width: 307px;
+                height: 307px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                gap: 30px;
+                color: #ffffff;
+                font-size: 20px;
+                background-color: rgba(43, 43, 43, 0.259);
+                object-fit: cover;
+            }
+        }
+
+        div {
+            display: flex;
+            // gap: 5px;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.explore-story-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 316px));
+    gap: 3px;
+    // padding-bottom: 50px;
+
+    img {
+        // width: 307px;
+        // height: 307px;
+        object-fit: cover;
+    }
+}
+
+@include for-mobile-layout {
+    .explore-story-list {
+        flex-wrap: wrap;
+        padding-bottom: 50px;
+        margin: 0 auto;
+        gap: 2px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100vw;
+
+        img {
+
+            object-fit: cover;
+            // width: 33vw;
+            // height: 33vh;
+        }
+    }
+
+    .story-info {
+        display: none;
+    }
+}
+
+///////// normal //////
+@include for-narrow-layout {}
+
+
+///////// Wide //////////
+@include for-wide-layout {}
+
+
+
+
+
+
+.explore-page {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.explore-story-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(auto, 316px));
+    // gap: 3px;
+
+    > :nth-child(10n + 3) {
+        grid-row: span 2;
+    }
+
+    > :nth-child(10n + 6) {
+        grid-row: span 2;
+    }
+
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
