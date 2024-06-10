@@ -83,6 +83,7 @@ export function storyReducer(state = initialState, action) {
         case SET_FILTER:
             return { ...state, filterBy: { ...action.filterBy } }
         case UPDATE_STORY:
+
             stories = state.stories.map(story => story._id === action.story._id ? action.story : story)
             return { ...state, stories }
         case ADD_STORY:

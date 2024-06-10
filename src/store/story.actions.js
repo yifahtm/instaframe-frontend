@@ -3,7 +3,7 @@ import { storyService } from '../services/story.service.local.js'
 import { store } from './store.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { ADD_STORY, REMOVE_STORY, SET_STORIES, UNDO_REMOVE_STORY, UPDATE_STORY } from './story.reducer.js'
-
+import { storyServiceHttp } from '../services/story.service.js'
 
 // Action Creators:
 export function getActionRemoveStory(storyId) {
@@ -24,10 +24,13 @@ export function getActionUpdateStory(story) {
         story
     }
 }
+export function updateStoryAfterCommenting(story) {
+    store.dispatch(getActionUpdateStory(story))
 
+}
 export async function loadStories() {
     try {
-        const stories = await storyService.query()
+        const stories = await storyServiceHttp.query()
         console.log('Stories from DB:', stories)
         store.dispatch({
             type: SET_STORIES,

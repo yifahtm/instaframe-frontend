@@ -36,6 +36,8 @@ import { TxtInput } from "./TxtInput.jsx";
 
 import { storyService } from "../services/story.service.local.js";
 import { userService } from "../services/user.service.js";
+import { storyServiceHttp } from "../services/story.service.js";
+import { getActionUpdateStory, loadStories, updateStory, updateStoryAfterCommenting } from "../store/story.actions.js";
 
 export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes }) {
     const [isListOpen, setIsListOpen] = useState(false)
@@ -81,17 +83,32 @@ export function StoryPreview({ story, user, onRemoveStory, likesIsOpen, likes })
         setSave(checkSave())
     }
 
+    // async function addStoryComment(ev) {
+    //     ev.preventDefault()
+    //     alert("hello there")
+    //     console.log(story._id, comment)
+    //     const newComment = storyService.addStoryCmt(story._id, comment)
+    //     console.log(story._id, comment)
+    //     story.comments.push(newComment)
+    //     await storyService.save(story)
+    //     setComment({ txt: '' })
+    // }
     async function addStoryComment(ev) {
         ev.preventDefault()
-        console.log(story._id, comment)
-        const newComment = storyService.addStoryCmt(story._id, comment)
-        console.log(story._id, comment)
-        story.comments.push(newComment)
-        await storyService.save(story)
+        // console.log("The story you want is here:" + await storyServiceHttp.getById(story._id))
+        // console.log(story._id)
+        // console.log(comment)
 
+        // console.log(user)
+        const newComment = await storyServiceHttp.addStoryMsg(story._id, comment.txt, user)
+        story.comments.push(newComment.cmt)
+        updateStoryAfterCommenting(story)
+        console.log(story)
+        // story.comments.push(newComment.cmt)
+        // await storyServiceHttp.save(story)
+        // story.comments.push(comment)
         setComment({ txt: '' })
     }
-
     const { imgUrls, txt, likedBy, comments } = story
     return (
         <section className="story-preview">

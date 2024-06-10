@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect, Fragment } from "react";
 import { useSelector } from "react-redux";
 import { useParams, useNavigate, Link } from "react-router-dom";
@@ -10,10 +11,12 @@ import { ActionListModal } from "./ActionListModal.jsx";
 
 import { storyService } from "../services/story.service.local.js"
 import { userService } from "../services/user.service.js";
-import { updateStory } from "../store/story.actions.js";
+import { getActionUpdateStory, updateStory, updateStoryAfterCommenting } from "../store/story.actions.js";
+import { storyServiceHttp } from './../services/story.service';
 
 export function StoryDetails() {
     const [story, setStory] = useState(null)
+    // const [img, setImg] = useState('')
     const [comment, setComment] = useState({ txt: '' })
     const [like, setLike] = useState('')
     const [save, setSave] = useState('')
@@ -23,14 +26,15 @@ export function StoryDetails() {
     const user = useSelector((storeState) => storeState.userModule.loggedinUser)
     const params = useParams()
 
-
     const navigate = useNavigate()
+    let imagesLocationStart = '../../'
 
 
 
 
     useEffect(() => {
         loadStory()
+        // setImg(story.imgUrls[0])
     }, [])
 
     function onClose() {
@@ -38,10 +42,11 @@ export function StoryDetails() {
     }
 
     function loadStory() {
-        console.log(params)
-        storyService.getById(params.storyId)
+        storyServiceHttp.getById(params.storyId)
             .then((story) => {
                 setStory(story)
+                console.log(story)
+                console.log(params.storyId)
             })
             .catch((err) => {
                 console.log('Had issues in story details', err)
@@ -56,11 +61,18 @@ export function StoryDetails() {
 
     async function addStoryComment(ev) {
         ev.preventDefault()
-        console.log(story._id)
-        console.log(comment)
-        const newComment = await storyService.addStoryCmt(story._id, comment)
-        story.comments.push(newComment)
-        await storyService.save(story)
+        // console.log("The story you want is here:" + await storyServiceHttp.getById(story._id))
+        // console.log(story._id)
+        // console.log(comment)
+        const newComment = await storyServiceHttp.addStoryMsg(story._id, comment.txt, user)
+        // console.log(newComment)
+
+        story.comments.push(newComment.cmt)
+        // await storyServiceHttp.save(story)
+        // story.comments.push(comment)
+        updateStoryAfterCommenting(story)
+        console.log(story)
+        setStory(story)
 
         setComment({ txt: '' })
     }
@@ -147,7 +159,9 @@ export function StoryDetails() {
                     story.imgUrls.map(img => <img key={story.imgUrls} className="story-img" src={img} />)
                     // </Slider>
                     :  */}
-                <img className="story-img" src={story.imgUrls[0]} />
+                {story.imgUrls[0].startsWith('http') ?
+                    <img className="story-img" src={story.imgUrls[0]} alt="story-img" /> :
+                    <img className="story-img" src={imagesLocationStart + story.imgUrls[0]} alt="story-img" />}
                 {/* } */}
             </div>
 

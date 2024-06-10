@@ -7,7 +7,7 @@ import { userService } from './user.service.js'
 
 const STORAGE_KEY = 'story'
 
-export const storyService = {
+export const storyServiceHttp = {
     query,
     getById,
     save,
@@ -15,7 +15,7 @@ export const storyService = {
     getEmptyStory,
     addStoryMsg
 }
-window.cs = storyService
+window.cs = storyServiceHttp
 
 
 async function query(filterBy = { txt: '', price: 0 }) {
@@ -40,8 +40,8 @@ async function save(story) {
     return savedStory
 }
 
-async function addStoryMsg(storyId, txt) {
-    const savedMsg = await httpService.post(`story/${storyId}/msg`, { txt })
+async function addStoryMsg(storyId, txt, userDetails) {
+    const savedMsg = await httpService.put(`story/${storyId}/msg`, { txt, by: userDetails })
     return savedMsg
 }
 
