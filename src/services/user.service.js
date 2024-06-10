@@ -1,7 +1,7 @@
 import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
 import { socketService } from './socket.service'
-
+import axios from 'axios'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
 const STORAGE_KEY_USERS = 'users'
 
@@ -18,7 +18,8 @@ export const userService = {
     changeScore,
     getEmptyUser,
     getDemoUser,
-    filterUsers
+    filterUsers,
+    getUsersForSearch
 }
 
 window.userService = userService
@@ -40,6 +41,21 @@ async function getUsers() {
 }
 
 
+async function getUsersForSearch() {
+    try {
+        const response = await axios.get('http://localhost:3030/api/user');
+
+        if (response && response.data) {
+            console.log(response.data)
+            return response.data;
+        } else {
+            throw new Error('No data received from the local server');
+        }
+    } catch (error) {
+        console.error('Error fetching users from local server:', error);
+        throw error;
+    }
+}
 
 async function getById(userId) {
     // const user = await storageService.get('users', userId)
@@ -230,7 +246,7 @@ function _createUsers() {
             username: "denchik1996",
             imgUrl: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             password: "12345",
-            bio: 'Traveling and sharing my life! Folow me to see more!',
+            bio: 'Traveling and sharing my life! Follow me to see more!',
             following: [
                 {
                     _id: "u106",

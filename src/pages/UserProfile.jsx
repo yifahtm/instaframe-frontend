@@ -21,7 +21,7 @@ export function UserProfile() {
 
   const [follow, setFollow] = useState('')
   const [toggle, setToggle] = useState('stories')
-
+  const imagesLocationStart = '../../'
   const navigate = useNavigate()
   console.log(user)
   let loggedInUser
@@ -32,6 +32,7 @@ export function UserProfile() {
     loadStories()
     // console.log(users)
     loadUser(params.id)
+    console.log(params.id)
     // loadUsers()
   }, [])
 
@@ -45,9 +46,9 @@ export function UserProfile() {
   // }
 
   console.log(stories)
-  const profileStories = stories.filter(story => story.by._id === userProfile._id)
+  const profileStories = stories.filter(story => ((story.by.username === params.id) || (story.by._id === params.id)))
   const savedStories = stories.filter(story => user.savedStoryIds.includes(story._id))
-
+  console.log(profileStories)
   function onToggle(str) {
     if (!loggedInUser) return
     setToggle(str)
@@ -208,12 +209,19 @@ export function UserProfile() {
                   </div>
                 </div>
               </section>
-              <img key={story.imgUrl} src={story.imgUrls[0]} /></div>)}
+              {story.imgUrls[0].startsWith('http') ?
+                <img key={story.imgUrl} src={story.imgUrls[0]} /> :
+                <img key={story.imgUrl} src={imagesLocationStart + story.imgUrls[0]} />}
+            </div>
+            )}
           </section>
           :
           <section className="profile-stories">
-            {savedStories.map(story => <img key={story._id} src={story.imgUrls[0]} />)}
+            {savedStories.map(story => (
+              <img key={story._id} src={story.imgUrls[0].startsWith('http') ? story.imgUrls[0] : imagesLocationStart + story.imgUrls[0]} />
+            ))}
           </section>
+
         }
       </div>
     </div>
