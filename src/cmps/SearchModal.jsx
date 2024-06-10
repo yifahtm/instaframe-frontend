@@ -7,14 +7,14 @@ import { loadUsers } from "../store/user.actions"
 
 export function SearchModal({ setSearchModal, searchModal, full, setFull }) {
     const [filterBy, setFilterBy] = useState({ txt: '' })
+    const [users, setUsers] = useState([])
     // const elInputRef = useRef(null)
-    const users = useSelector(storeState => storeState.userModule.users)
     const filteredUsers = userService.filterUsers(filterBy, users)
     const navigate = useNavigate()
 
     useEffect(() => {
         // elInputRef.current.focus()
-        loadUsers()
+        awaitUserData()
     }, [])
 
     useEffect(() => {
@@ -22,7 +22,10 @@ export function SearchModal({ setSearchModal, searchModal, full, setFull }) {
         setFilterBy(filterBy)
     }, [filterBy])
 
-
+    async function awaitUserData() {
+        const users = await userService.getUsersForSearch()
+        setUsers(users)
+    }
     function handleChange({ target }) {
         let { value, name: field } = target
         setFilterBy((prevFilter) => {
