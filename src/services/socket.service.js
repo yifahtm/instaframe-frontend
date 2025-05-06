@@ -1,4 +1,4 @@
-import io from 'socket.io-client'
+// import io from 'socket.io-client'
 import { userService } from './user.service'
 
 export const SOCKET_EVENT_ADD_MSG = 'chat-add-msg'

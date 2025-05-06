@@ -1,4 +1,4 @@
-import { HomePage } from './pages/HomePage.jsx'
+// import { HomePage } from './pages/HomePage.jsx'
 // import { AboutUs } from './pages/AboutUs.jsx'
 import { StoryIndex } from './pages/StoryIndex.jsx'
 // import { ReviewIndex } from './pages/ReviewIndex.jsx'
@@ -7,11 +7,11 @@ import { StoryIndex } from './pages/StoryIndex.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
-    {
-        path: '/',
-        component: <HomePage />,
-        label: 'Home 🏠',
-    },
+    // {
+    //     path: '/',
+    //     component: <HomePage />,
+    //     label: 'Home 🏠',
+    // },
     {
         path: 'story',
         component: <StoryIndex />,
